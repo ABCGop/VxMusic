@@ -19,7 +19,6 @@ import 'package:spotube/components/image/universal_image.dart';
 import 'package:spotube/extensions/context.dart';
 import 'package:spotube/extensions/image.dart';
 import 'package:spotube/provider/spotify/spotify.dart';
-import 'package:spotube/provider/spotify_provider.dart';
 
 class PlaylistCreateDialog extends HookConsumerWidget {
   /// Track ids to add to the playlist
@@ -101,11 +100,17 @@ class PlaylistCreateDialog extends HookConsumerWidget {
         } else {
           await playlistNotifier.create(payload, onError);
         }
+
+        if (trackIds.isNotEmpty) {
+          await playlistNotifier.addTracks(trackIds, onError);
+        }
       } finally {
         isSubmitting.value = false;
         if (context.mounted &&
             !ref.read(playlistProvider(playlistId ?? "")).hasError) {
-          context.router.maybePop();
+          context.router.maybePop<Playlist>(
+            await ref.read(playlistProvider(playlistId ?? "").future),
+          );
         }
       }
     }
@@ -254,7 +259,7 @@ class PlaylistCreateDialog extends HookConsumerWidget {
 class PlaylistCreateDialogButton extends HookConsumerWidget {
   const PlaylistCreateDialogButton({super.key});
 
-  showPlaylistDialog(BuildContext context, SpotifyApi spotify) {
+  showPlaylistDialog(BuildContext context, SpotifyApiWrapper spotify) {
     showDialog(
       context: context,
       alignment: Alignment.center,
