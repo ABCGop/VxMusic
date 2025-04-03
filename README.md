@@ -37,7 +37,7 @@ Btw it's not just another Electron app 😉
 ## 📜 ⬇️ Installation guide
 
 New versions usually release every 3-4 months.<br />
-This handy table lists all the methods you can use to install Spotube:
+This handy table lists all the methods you can use to install VxMusic:
 
 <table>
   <tr>
