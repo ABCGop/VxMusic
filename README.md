@@ -1,21 +1,16 @@
-<div align="center">
-  <img width="600" src="assets/spotube_banner.png" alt="Spotube Logo">
-
 An open source, cross-platform Spotify client compatible across multiple platforms<br />
 utilizing Spotify's data API and YouTube, Piped.video or JioSaavn as an audio source,<br />
 eliminating the need for Spotify Premium
 
 Btw it's not just another Electron app 😉
 
-<a href="https://spotube.krtirtho.dev"><img alt="Visit the website" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/documentation/website_vector.svg"></a>
-<a href="https://discord.gg/uJ94vxB6vg"><img alt="Discord Server" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg"></a>
+<a href="https://vxmusic.vxdev.fun"><img alt="Visit the website" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/documentation/website_vector.svg"></a>
+<a href="https://discord.gg/nvd7cApedd"><img alt="Discord Server" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg"></a>
 
-<a href="https://patreon.com/krtirtho"><img alt="Support me on Patron" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/patreon-singular_vector.svg"></a>
-<a href="https://www.buymeacoffee.com/krtirtho"><img alt="Buy me a Coffee" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/buymeacoffee-singular_vector.svg"></a>
+<a href="https://patreon.com/opabcg"><img alt="Support me on Patron" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/patreon-singular_vector.svg"></a>
+<a href="https://www.buymeacoffee.com/opabcg"><img alt="Buy me a Coffee" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/buymeacoffee-singular_vector.svg"></a>
 
-[![HackerNews](https://hackerbadge.vercel.app/api?id=39066136&type=dark)](https://news.ycombinator.com/item?id=39066136)
-
-<a href="https://opencollective.com/spotube"><img src="https://opencollective.com/spotube/donate/button.png?color=blue" alt="Donate to our Open Collective" height="45"></a>
+<a href="https://opencollective.com/vxmusic"><img src="https://opencollective.com/vxmusic/donate/button.png?color=blue" alt="Donate to our Open Collective" height="45"></a>
 
 ---
 
@@ -43,7 +38,6 @@ Btw it's not just another Electron app 😉
 ### ❌ Unsupported features
 
 - 🗣️ **Spotify Shows & Podcasts:** Shows and Podcasts will <ins>**never be supported**</ins> because the audio tracks are <ins>_only_</ins> available on Spotify and accessing them would require Spotify Premium.
-- 🎧 **Spotify Listen Along:** [Coming soon!](https://github.com/KRTirtho/spotube/issues/8)
 
 ## 📜 ⬇️ Installation guide
 
@@ -56,150 +50,29 @@ This handy table lists all the methods you can use to install Spotube:
     <th>Package/Installation Method</th>
   </tr>
   <tr>
-    <td>Windows</td>
-    <td>
-      <a href="https://github.com/KRTirtho/spotube/releases/latest/download/Spotube-windows-x86_64-setup.exe">
-        <img width="220" alt="Windows Download" src="https://get.todoist.help/hc/article_attachments/4403191721234/WindowsButton.svg">
-      </a>
-  </tr>
   <tr>
-    <td>MacOS</td>
-    <td>
-      <a href="https://github.com/KRTirtho/spotube/releases/latest/download/Spotube-macos-universal.dmg">
-        <img width="220" alt="MacOS Download" src="https://reachify.io/wp-content/uploads/2018/09/mac-download-button-1.png">
-      </a>
-    </td>
   </tr>
   <tr>
     <td>Android</td>
     <td>
-      <a href="https://play.google.com/store/apps/details?id=oss.krtirtho.spotube">
+      <a href="https://play.google.com/store/apps/details?id=com.abcg.music">
         <img width="220" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
       </a>
       <br>
-      <a href="https://github.com/KRTirtho/spotube/releases/latest/download/Spotube-android-all-arch.apk">
+      <a href="https://github.com/ABCGop/VxMusic/releases/latest/download/app-stable-release.apk">
         <img width="220" alt="APK download" src="https://user-images.githubusercontent.com/114044633/223920025-83687de0-e463-4c5d-8122-e06e4bb7d40c.png">
       </a>
       <br/>
-      <a href="https://f-droid.org/packages/oss.krtirtho.spotube">
-        <img width="220" alt="Download from F-Droid" src="https://user-images.githubusercontent.com/61944859/174589876-bace24c0-b3fd-4c4a-bdb4-6fa82b5853ec.png">
-      </a>
     </td>
-  </tr>
-  <tr>
-  <tr>
-    <td>iOS</td>
-    <td>
-      <a href="https://github.com/KRTirtho/spotube/releases/latest/download/Spotube-iOS.ipa">
-        <img width="220" alt="Download iOS IPA" src="https://github.com/user-attachments/assets/3e50d93d-fb39-435c-be6b-337745f7c423">
-      </a>
-      <br/>
-      <blockquote style="color:red">
-        *iPA file only. Requires sideloading with <a href="https://altstore.io/">AltStore</a> or similar tools.
-      </blockquote>
-    </td>
-  </tr>
-  <tr>
-    <td>Flatpak</td>
-    <td>
-      <p><code>flatpak install com.github.KRTirtho.Spotube</code></p>
-      <a href="https://flathub.org/apps/details/com.github.KRTirtho.Spotube">
-        <img width="220" alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-en.png">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td>AppImage</td>
-    <td>AppImage's lacking stability led to it's temporary removal. More information at https://github.com/KRTirtho/spotube/issues/1082</td>
-  </tr>
-  <tr>
-    <td>Debian/Ubuntu</td>
-    <td>
-      <a href="https://github.com/KRTirtho/spotube/releases/latest/download/Spotube-linux-x86_64.deb">
-        <img width="220" alt="Debian/Ubuntu Download" src="https://user-images.githubusercontent.com/61944859/169097994-e92aff78-fd75-4c93-b6e4-f072a4b5a7ed.png">
-      </a>
-      <p>Then run: <code>sudo apt install ./Spotube-linux-x86_64.deb</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td>Arch/Manjaro</td>
-    <td>
-      <p>With pamac: <code>sudo pamac install spotube-bin</code></p>
-      <p>With yay: <code>yay -Sy spotube-bin</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td>Fedora/OpenSuse</td>
-    <td>
-      <a href="https://github.com/KRTirtho/spotube/releases/latest/download/Spotube-linux-x86_64.rpm">
-        <img width="220" alt="Fedora/OpenSuse Download" src="https://user-images.githubusercontent.com/61944859/223638350-5926b9da-04d6-4edd-931d-ad533e4ff058.png">
-      </a>
-      <p>For Fedora: <code>sudo dnf install ./Spotube-linux-x86_64.rpm</code></p>
-      <p>For OpenSuse: <code>sudo zypper in ./Spotube-linux-x86_64.rpm</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td>Linux (tarball)</td>
-    <td>
-      <a href="https://github.com/KRTirtho/spotube/releases/latest">
-        <img width="220" alt="Tarball Download" src="https://user-images.githubusercontent.com/61944859/169456985-e0ba1fd4-10e8-4cc0-ab94-337acc6e0295.png">
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td>Macos - <a href="https://brew.sh">Homebrew</a></td>
-    <td>
-<pre lang="bash">
-brew tap krtirtho/apps
-brew install --cask spotube
-</pre>   
-    </td>
-  </tr>
-  <tr>
-    <td>Windows - <a href="https://chocolatey.org">Chocolatey</a></td>
-    <td>
-      <p><code>choco install spotube</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td>Windows - <a href="https://scoop.sh">Scoop</a></td>
-    <td>
-      <p><code>scoop bucket add extras</code></p>
-      <p><code>scoop install spotube</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td>Windows - <a href="https://github.com/microsoft/winget-cli">WinGet</a></td>
-    <td>
-      <p><code>winget install --id KRTirtho.Spotube</code></p>
-    </td>
-  </tr>
 </table>
 
-### 🔄 Nightly Builds
+## 👥 The VxMusic team
 
-Grab the latest nightly builds of Spotube [from the GitHub Releases](https://github.com/KRTirtho/spotube/releases/tag/nightly).
-
-## 🕳️ Building from source
-
-<a href="https://github.com/KRTirtho/spotube/actions"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/KRTirtho/spotube/spotube-release-binary.yml?+label=Build%20Status"></a>
-
-You can compile Spotube's source code by [following these instructions](CONTRIBUTION.md#your-first-code-contribution).
-
-## 👥 The Spotube team
-
-- [Kingkor Roy Tirtho](https://github.com/KRTirtho) - The Founder, Maintainer and Lead Developer
-- [RaptaG](https://github.com/RaptaG) - The GitHub Moderator and Community Manager
-- [Owen Connor](https://github.com/owencz1998) - The Cool Discord Moderator
-- [Meenbeese](https://github.com/meenbeese) - The Android Developer
-- [Piotr Rogowski](https://github.com/karniv00l) - The MacOS Developer
-- [Rusty Apple](https://github.com/RustyApple) - The Mysterious Unknown Guy
+- [Vishesh Gangwar](https://github.com/ABCGop) - The Founder, Maintainer and Lead Developer
 
 ## 💼 License
 
-Spotube is open source and licensed under the [BSD-4-Clause](/LICENSE) License.
-
-If you are concerned, you can [read the reason of choosing this license](https://dev.to/krtirtho/choosing-open-source-license-wisely-1m3p).
+VxMusic is open source and licensed under the [BSD-4-Clause](/LICENSE) License.
 
 <details>
   <summary>
@@ -350,4 +223,4 @@ If you are concerned, you can [read the reason of choosing this license](https:/
 1. [flutter_new_pipe_extractor](https://github.com/KRTirtho/flutter_new_pipe_extractor) - NewPipeExtractor binding for Flutter (Android only)
 </details>
 
-<div align="center"><h4>© Copyright Spotube 2024</h4></div>
+<div align="center"><h4>© Copyright VxMusic 2025</h4></div>
