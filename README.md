@@ -11,11 +11,6 @@ Btw it's not just another Electron app 😉
 <a href="https://www.buymeacoffee.com/opabcg"><img alt="Buy me a Coffee" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/buymeacoffee-singular_vector.svg"></a>
 
 <a href="https://opencollective.com/vxmusic"><img src="https://opencollective.com/vxmusic/donate/button.png?color=blue" alt="Donate to our Open Collective" height="45"></a>
-
----
-
-![Spotube Desktop](assets/spotube-screenshot.png)
-
 ![Spotube Mobile](assets/mobile-screenshots/combined.png)
 
 </div>
