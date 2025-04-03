@@ -1,4 +1,4 @@
-# Code of Conduct - Spotube
+# Code of Conduct - VxMusic
 
 ## Our Pledge
 
