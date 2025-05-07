@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "97371051620",
+    "project_id": "vxmusic-abcg",
+    "storage_bucket": "vxmusic-abcg.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97371051620:android:b7e627e7618f239f23b171",
+        "android_client_info": {
+          "package_name": "com.abcg.music"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97371051620-19feh2cdgm0k990uj3b63pos6d701ihe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk8ijitlsOFgCFskZxwT6hLLEXCmtiEvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97371051620-19feh2cdgm0k990uj3b63pos6d701ihe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97371051620:android:f20cdbff4f5b94cc23b171",
+        "android_client_info": {
+          "package_name": "com.abcg.music.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97371051620-19feh2cdgm0k990uj3b63pos6d701ihe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk8ijitlsOFgCFskZxwT6hLLEXCmtiEvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97371051620-19feh2cdgm0k990uj3b63pos6d701ihe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
