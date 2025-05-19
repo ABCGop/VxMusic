@@ -38,9 +38,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.abcg.music.BuildConfig
 import com.abcg.music.LocalPlayerAwareWindowInsets
-import com.abcg.music.R
 import com.abcg.music.ui.component.IconButton
 import com.abcg.music.ui.utils.backToMain
+import com.abcg.music.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,7 +75,7 @@ fun AboutScreen(
             verticalAlignment = Alignment.Top,
         ) {
             Text(
-                text = "InnerTune",
+                text = "VxMusic",
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(top = 8.dp, bottom = 4.dp)
@@ -131,7 +131,7 @@ fun AboutScreen(
         Spacer(Modifier.height(4.dp))
 
         Text(
-            text = "by Zion Huang",
+            text = "by Vishesh Gangwar",
             style = MaterialTheme.typography.titleMedium,
             color = MaterialTheme.colorScheme.secondary
         )
@@ -140,7 +140,7 @@ fun AboutScreen(
 
         Row {
             IconButton(
-                onClick = { uriHandler.openUri("https://github.com/z-huang/InnerTune") }
+                onClick = { uriHandler.openUri("https://github.com/ABCGop/VxMusic") }
             ) {
                 Icon(
                     painter = painterResource(R.drawable.github),
@@ -149,19 +149,10 @@ fun AboutScreen(
             }
 
             IconButton(
-                onClick = { uriHandler.openUri("https://liberapay.com/zionhuang") }
+                onClick = { uriHandler.openUri("https://discord.gg/msHXQQGAFa") }
             ) {
                 Icon(
-                    painter = painterResource(R.drawable.liberapay),
-                    contentDescription = null
-                )
-            }
-
-            IconButton(
-                onClick = { uriHandler.openUri("https://www.buymeacoffee.com/zionhuang") }
-            ) {
-                Icon(
-                    painter = painterResource(R.drawable.buymeacoffee),
+                    painter = painterResource(R.drawable.discord),
                     contentDescription = null
                 )
             }
