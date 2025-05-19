@@ -6,9 +6,9 @@
         android:icon="@drawable/shortcut_search"
         android:shortcutShortLabel="@string/search">
         <intent
-            android:targetClass="com.zionhuang.music.MainActivity"
-            android:targetPackage="com.zionhuang.music.debug"
-            android:action="com.zionhuang.music.action.SEARCH" />
+            android:targetClass="com.abcg.music.MainActivity"
+            android:targetPackage="com.abcg.music.debug"
+            android:action="com.abcg.music.action.SEARCH" />
     </shortcut>
     <shortcut
         android:shortcutId="songs"
@@ -16,9 +16,9 @@
         android:icon="@drawable/shortcut_songs"
         android:shortcutShortLabel="@string/songs">
         <intent
-            android:targetClass="com.zionhuang.music.MainActivity"
-            android:targetPackage="com.zionhuang.music.debug"
-            android:action="com.zionhuang.music.action.SONGS" />
+            android:targetClass="com.abcg.music.MainActivity"
+            android:targetPackage="com.abcg.music.debug"
+            android:action="com.abcg.music.action.SONGS" />
     </shortcut>
     <shortcut
         android:shortcutId="albums"
@@ -26,9 +26,9 @@
         android:icon="@drawable/shortcut_albums"
         android:shortcutShortLabel="@string/albums">
         <intent
-            android:targetClass="com.zionhuang.music.MainActivity"
-            android:targetPackage="com.zionhuang.music.debug"
-            android:action="com.zionhuang.music.action.ALBUMS" />
+            android:targetClass="com.abcg.music.MainActivity"
+            android:targetPackage="com.abcg.music.debug"
+            android:action="com.abcg.music.action.ALBUMS" />
     </shortcut>
     <shortcut
         android:shortcutId="playlists"
@@ -36,8 +36,8 @@
         android:icon="@drawable/shortcut_playlists"
         android:shortcutShortLabel="@string/playlists">
         <intent
-            android:targetClass="com.zionhuang.music.MainActivity"
-            android:targetPackage="com.zionhuang.music.debug"
-            android:action="com.zionhuang.music.action.PLAYLISTS" />
+            android:targetClass="com.abcg.music.MainActivity"
+            android:targetPackage="com.abcg.music.debug"
+            android:action="com.abcg.music.action.PLAYLISTS" />
     </shortcut>
 </shortcuts>
