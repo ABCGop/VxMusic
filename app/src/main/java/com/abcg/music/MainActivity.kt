@@ -134,7 +134,7 @@ import com.abcg.music.ui.screens.settings.DarkMode
 import com.abcg.music.ui.screens.settings.NavigationTab
 import com.abcg.music.ui.theme.ColorSaver
 import com.abcg.music.ui.theme.DefaultThemeColor
-import com.abcg.music.ui.theme.InnerTuneTheme
+import com.abcg.music.ui.theme.VxMusicTheme
 import com.abcg.music.ui.theme.extractThemeColor
 import com.abcg.music.ui.utils.appBarScrollBehavior
 import com.abcg.music.ui.utils.backToMain
@@ -267,7 +267,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
-            InnerTuneTheme(
+            VxMusicTheme(
                 darkTheme = useDarkTheme,
                 pureBlack = pureBlack,
                 themeColor = themeColor
@@ -805,10 +805,10 @@ class MainActivity : ComponentActivity() {
     }
 
     companion object {
-        const val ACTION_SEARCH = "com.zionhuang.music.action.SEARCH"
-        const val ACTION_SONGS = "com.zionhuang.music.action.SONGS"
-        const val ACTION_ALBUMS = "com.zionhuang.music.action.ALBUMS"
-        const val ACTION_PLAYLISTS = "com.zionhuang.music.action.PLAYLISTS"
+        const val ACTION_SEARCH = "com.abcg.music.action.SEARCH"
+        const val ACTION_SONGS = "com.abcg.music.action.SONGS"
+        const val ACTION_ALBUMS = "com.abcg.music.action.ALBUMS"
+        const val ACTION_PLAYLISTS = "com.abcg.music.action.PLAYLISTS"
     }
 }
 
