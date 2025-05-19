@@ -7,7 +7,7 @@ import com.abcg.music.utils.dataStore
 import com.abcg.music.utils.get
 
 /**
- * Source: https://github.com/Malopieds/InnerTune
+ * Source: https://github.com/Malopieds/VxMusic
  */
 object LrcLibLyricsProvider : LyricsProvider {
     override val name = "LrcLib"
