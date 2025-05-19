@@ -1,12 +1,11 @@
 # VxMusic
 
 <img src="https://play-lh.googleusercontent.com/o6cj_-Qn_nSUiDmQhiA571ce2ygvkle9Qyl23ilyX9ljDQmu5VOJ8mMagQZwoQHcoQ8p=w240-h480-rw" height="72">
-
 A Material 3 YouTube Music client for Android
-
 [![Latest release](https://img.shields.io/github/v/release/ABCGop/VxMusic?include_prereleases)](https://github.com/ABCGop/music/releases)
 [![License](https://img.shields.io/github/license/ABCGop/VxMusic)](https://www.gnu.org/licenses/gpl-3.0)
 [![Downloads](https://img.shields.io/github/downloads/ABCGop/VxMusic/total)](https://github.com/ABCGop/VxMusic/releases)
+
 [<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="80">](https://github.com/ABCGop/VxMusic/releases/latest)
 [<img src="https://vxmusic.vxdev.fun/assets/img/google-play-badge.svg" alt="Get it on Play Store" height="80">](https://play.google.com/store/apps/details?id=com.abcg.music)
 
