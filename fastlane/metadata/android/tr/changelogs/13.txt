@@ -1,4 +1,4 @@
-Müziğin ismi artık InnerTune oldu!
+Müziğin ismi artık VxMusic oldu!
 
 -Oynatma arayüzü değiştirildi
 -Çalma sırası değiştirildi
