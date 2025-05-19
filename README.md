@@ -1,6 +1,6 @@
 # VxMusic
 
-<img src="https://raw.githubusercontent.com/ABCGop/VxMusic/dev/app/src/main/ic_launcher-playstore.png" height="72">
+<img src="https://play-lh.googleusercontent.com/o6cj_-Qn_nSUiDmQhiA571ce2ygvkle9Qyl23ilyX9ljDQmu5VOJ8mMagQZwoQHcoQ8p=w240-h480-rw" height="72">
 
 A Material 3 YouTube Music client for Android
 
