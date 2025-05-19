@@ -40,14 +40,6 @@ A Material 3 YouTube Music client for Android
 2. In the three dots menu at the top-right of the screen, click "Developer settings"
 3. Enable "Unknown sources"
 
-## Translating
-
-If you'd like to help translate VxMusic, check out [our project in Weblate.](https://hosted.weblate.org/engage/VxMusic/) Weblate allows us to solve issues with translation inconsistency, edited strings, etc.
-
-> Preferably do not send pull requests if you can. They can cause merging issues, which can lead to the loss of translation work from you or other people.
-
-Thank you for helping translate VxMusic!
-
 ## Donate
 
 If you like VxMusic, you're welcome to send a donation. Donations will support the development,
