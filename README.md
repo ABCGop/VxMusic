@@ -44,7 +44,7 @@ A Material 3 YouTube Music client for Android
 
 If you like VxMusic, you're welcome to send a donation. Donations will support the development,
 including bug fixes and new features.
-<a href="https://buymeacoffee.com/opabcg"><img src="https://raw.githubusercontent.com/ABCGop/VxMusic/dev/assets/buymeacoffee.png" height="60" ></a>
+<a href="https://buymeacoffee.com/opabcg"><img src="https://th.bing.com/th/id/OIP.3UhdHf3MRqSYCV16g7Hu1QHaBn?rs=1&pid=ImgDetMain" height="60" ></a>
 
 ## Disclaimer
 
