@@ -1,6 +1,6 @@
 # VxMusic
 
-<img src="https://play-lh.googleusercontent.com/o6cj_-Qn_nSUiDmQhiA571ce2ygvkle9Qyl23ilyX9ljDQmu5VOJ8mMagQZwoQHcoQ8p=w240-h480-rw" height="72">
+<img src="https://play-lh.googleusercontent.com/Gs0RQFi8nQ1wc1u-NIQ_ZJgQm7VGe5xNg5euXpM2QmeAq8EuFDu-7bAZt20DYFpOLC4=s48-rw" height="72">
 A Material 3 YouTube Music client for Android
 
 [![Latest release](https://img.shields.io/github/v/release/ABCGop/VxMusic?include_prereleases)](https://github.com/ABCGop/music/releases)
