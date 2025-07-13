@@ -4,7 +4,7 @@
 A Material 3 YouTube Music client for Android
 
 [![Latest release](https://img.shields.io/github/v/release/ABCGop/VxMusic?include_prereleases)](https://github.com/ABCGop/music/releases)
-[![License](https://img.shields.io/github/license/ABCGop/music)](https://www.gnu.org/licenses/gpl-3.0)
+[![License](https://img.shields.io/github/license/ABCGop/vxmusic)](https://www.gnu.org/licenses/gpl-3.0)
 [![Downloads](https://img.shields.io/github/downloads/ABCGop/music/total)](https://github.com/ABCGop/music/releases)
 
 [<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="80">](https://github.com/ABCGop/music/releases/latest)
