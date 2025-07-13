@@ -8,6 +8,7 @@ A Material 3 YouTube Music client for Android
 [![Downloads](https://img.shields.io/github/downloads/ABCGop/music/total)](https://github.com/ABCGop/music/releases)
 
 [<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="80">](https://github.com/ABCGop/music/releases/latest)
+<br>
 [<img src="https://vxmusic.vxdev.fun/assets/img/google-play-badge.svg" alt="Get it on Play Store" height="50" width="200" >](https://play.google.com/store/apps/details?id=com.abcg.music)
 
 ## Features
