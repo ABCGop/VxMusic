@@ -1,0 +1,10 @@
+*.env
+*.json
+*.key
+*.keystore
+*.jks
+*.p8
+*.p12
+*.pem
+.idea/
+build/

@@ -1,0 +1,46 @@
+package com.liskovsoft.youtubeapi.auth.V1;
+
+import com.liskovsoft.youtubeapi.auth.models.auth.AccessToken;
+import com.liskovsoft.youtubeapi.auth.models.info.AccountsList;
+import com.liskovsoft.youtubeapi.auth.models.auth.RefreshToken;
+import com.liskovsoft.youtubeapi.auth.models.auth.UserCode;
+import com.liskovsoft.youtubeapi.common.converters.jsonpath.WithJsonPath;
+
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
+import retrofit2.http.POST;
+
+@WithJsonPath
+public interface AuthApi {
+    @FormUrlEncoded
+    @POST("https://www.youtube.com/o/oauth2/device/code")
+    Call<UserCode> getUserCode(@Field("client_id") String clientId,
+                               @Field("scope") String scope);
+
+    @FormUrlEncoded
+    @POST("https://www.youtube.com/o/oauth2/token")
+    Call<RefreshToken> getRefreshToken(@Field("code") String deviceCode,
+                                       @Field("client_id") String clientId,
+                                       @Field("client_secret") String clientSecret,
+                                       @Field("grant_type") String grantType);
+
+    @FormUrlEncoded
+    @POST("https://www.youtube.com/o/oauth2/token")
+    Call<AccessToken> getAccessToken(@Field("refresh_token") String refreshToken,
+                                     @Field("client_id") String clientId,
+                                     @Field("client_secret") String clientSecret,
+                                     @Field("grant_type") String grantType);
+
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    @POST("https://www.youtube.com/o/oauth2/token")
+    Call<AccessToken> getAccessToken(@Body RequestBody rawBody);
+
+    @Headers("Content-Type: application/json")
+    @POST("https://www.youtube.com/youtubei/v1/account/accounts_list")
+    Call<AccountsList> getAccountsList(@Body String authQuery, @Header("Authorization") String auth);
+}
