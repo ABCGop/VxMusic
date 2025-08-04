@@ -117,20 +117,6 @@
 
             </Button>
 
-            <Button
-                android:id="@+id/btBuyMeACoffee"
-                style="@style/Widget.Material3.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="25dp"
-                android:layout_marginVertical="5dp"
-                android:minWidth="0sp"
-                android:minHeight="0sp"
-                android:padding="0sp"
-                android:text="@string/buy_me_a_coffee">
-
-            </Button>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
