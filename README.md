@@ -50,3 +50,4 @@ subsidiaries.
 Any trademark, service mark, trade name, or other intellectual property rights used in this project
 are owned by the respective owners.
 # VxMusic
+this project is created by Me but the main author of this project is maxrave-dev
