@@ -50,5 +50,5 @@ subsidiaries.
 Any trademark, service mark, trade name, or other intellectual property rights used in this project
 are owned by the respective owners.
 # VxMusic
-This is a open source project started by [maxrave-dev](https://github.com/maxrave-dev) By the name name[SimpMusic](https://github.com/maxrave-dev/SimpMusic)
+This is a open source project started by [maxrave-dev](https://github.com/maxrave-dev) By the name [SimpMusic](https://github.com/maxrave-dev/SimpMusic)
 I Just edit some things and published it.
