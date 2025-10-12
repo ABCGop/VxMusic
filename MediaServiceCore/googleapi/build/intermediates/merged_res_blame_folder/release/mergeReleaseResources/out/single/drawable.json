@@ -1,0 +1,242 @@
+[
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/btn_checkbox_checked_to_unchecked_mtrl_animation.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/btn_checkbox_checked_to_unchecked_mtrl_animation.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/list_selector_pressed_light.9.png",
+        "source": "com.liskovsoft.googleapi-release-12:/drawable/list_selector_pressed_light.9.png"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_list_divider_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_item_background_holo_dark.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_seekbar_track_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_textfield_search_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/dialog_item_background.xml",
+        "source": "com.liskovsoft.googleapi-release-12:/drawable/dialog_item_background.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/spinner_76_inner_holo.png",
+        "source": "com.liskovsoft.googleapi-release-12:/drawable/spinner_76_inner_holo.png"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/progress_large_holo.xml",
+        "source": "com.liskovsoft.googleapi-release-12:/drawable/progress_large_holo.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_list_selector_holo_dark.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/btn_checkbox_unchecked_to_checked_mtrl_animation.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/btn_checkbox_unchecked_to_checked_mtrl_animation.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_switch_thumb_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_text_cursor_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/notification_bg.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/btn_checkbox_unchecked_mtrl.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/btn_checkbox_unchecked_mtrl.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/notification_bg_low.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_tab_indicator_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/btn_radio_on_to_off_mtrl_animation.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/btn_radio_on_to_off_mtrl_animation.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/list_selector_disabled_dark.9.png",
+        "source": "com.liskovsoft.googleapi-release-12:/drawable/list_selector_disabled_dark.9.png"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_cab_background_top_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_btn_colored_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/tooltip_frame_light.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/tooltip_frame_light.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/btn_radio_off_to_on_mtrl_animation.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/btn_radio_off_to_on_mtrl_animation.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ratingbar_small_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ic_ab_back_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/btn_radio_on_mtrl.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/btn_radio_on_mtrl.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_cab_background_internal_bg.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ic_clear_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_seekbar_tick_mark_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/preference_list_divider_material.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/drawable/preference_list_divider_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/tooltip_frame_dark.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_dialog_material_background.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_vector_test.xml",
+        "source": "com.liskovsoft.googleapi-jetified-appcompat-resources-1.2.0-7:/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_btn_borderless_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_btn_check_material_anim.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_btn_check_material_anim.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ic_search_api_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/notification_icon_background.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_list_selector_holo_light.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ic_menu_overflow_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_btn_radio_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_btn_check_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/btn_radio_off_mtrl.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/btn_radio_off_mtrl.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ratingbar_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_ic_go_search_api_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_btn_radio_material_anim.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_btn_radio_material_anim.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/spinner_76_outer_holo.png",
+        "source": "com.liskovsoft.googleapi-release-12:/drawable/spinner_76_outer_holo.png"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/btn_checkbox_checked_mtrl.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/btn_checkbox_checked_mtrl.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_seekbar_thumb_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_item_background_holo_light.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/ic_arrow_down_24dp.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/drawable/ic_arrow_down_24dp.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/list_selector_disabled_light.9.png",
+        "source": "com.liskovsoft.googleapi-release-12:/drawable/list_selector_disabled_light.9.png"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/notification_tile_bg.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable/abc_edit_text_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable/abc_edit_text_material.xml"
+    }
+]

@@ -1,0 +1,254 @@
+[
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_cascading_menu_item_layout.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_cascading_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/generic_selection_dialog.xml",
+        "source": "com.liskovsoft.googleapi-release-12:/layout/generic_selection_dialog.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_recyclerview.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_recyclerview.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/ime_secondary_split_test_activity.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout/ime_secondary_split_test_activity.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_search_view.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_alert_dialog_title_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_screen_simple.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_select_dialog_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_action_mode_bar.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/dialog_edit_text.xml",
+        "source": "com.liskovsoft.googleapi-release-12:/layout/dialog_edit_text.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_action_menu_item_layout.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_tooltip.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_tooltip.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_screen_content_include.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/dialog_check_item_multi.xml",
+        "source": "com.liskovsoft.googleapi-release-12:/layout/dialog_check_item_multi.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_widget_switch_compat.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_widget_switch_compat.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_action_menu_layout.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/select_dialog_multichoice_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_category.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_category.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_information.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_information.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_list_fragment.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_list_fragment.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_action_mode_close_item_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_expanded_menu_layout.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/dialog_custom_title.xml",
+        "source": "com.liskovsoft.googleapi-release-12:/layout/dialog_custom_title.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/notification_action_tombstone.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_dialog_edittext.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_dialog_edittext.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_list_menu_item_radio.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/select_dialog_item_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_screen_toolbar.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_widget_seekbar.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_widget_seekbar.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/notification_template_part_time.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/custom_dialog.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/image_frame.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/image_frame.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_information_material.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_information_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_list_menu_item_checkbox.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_material.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/ime_base_split_test_activity.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout/ime_base_split_test_activity.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_list_menu_item_layout.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/notification_template_part_chronometer.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_alert_dialog_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_action_bar_title_item.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/select_dialog_singlechoice_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_category_material.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_category_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/expand_button.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/expand_button.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_widget_switch.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_widget_switch.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_action_bar_up_container.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_widget_seekbar_material.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_widget_seekbar_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/notification_action.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout/notification_action.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/notification_template_icon_group.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_dialog_title_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_dropdown_material.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_dropdown_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/dialog_check_item_single.xml",
+        "source": "com.liskovsoft.googleapi-release-12:/layout/dialog_check_item_single.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_popup_menu_item_layout.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_activity_chooser_view.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/abc_list_menu_item_icon.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_dropdown.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_dropdown.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout/preference_widget_checkbox.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/layout/preference_widget_checkbox.xml"
+    }
+]

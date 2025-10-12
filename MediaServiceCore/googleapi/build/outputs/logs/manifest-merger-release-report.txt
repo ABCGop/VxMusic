@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml:2:13-83
+INJECTED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml:2:13-83
+	package
+		INJECTED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml
+	xmlns:android
+		ADDED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml:2:23-81
+uses-sdk
+INJECTED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml reason: use-sdk injection requested
+INJECTED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml
+INJECTED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml
+	android:targetSdkVersion
+		INJECTED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml
+	android:minSdkVersion
+		INJECTED from D:\My\Coding\Mrk2\MediaServiceCore\googleapi\build\intermediates\tmp\ProcessLibraryManifest\release\tempAndroidManifest982463944112944496.xml

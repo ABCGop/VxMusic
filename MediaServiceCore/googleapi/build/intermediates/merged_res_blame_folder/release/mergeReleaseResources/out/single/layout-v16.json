@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout-v16/notification_template_custom_big.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout-v16/notification_template_custom_big.xml"
+    }
+]

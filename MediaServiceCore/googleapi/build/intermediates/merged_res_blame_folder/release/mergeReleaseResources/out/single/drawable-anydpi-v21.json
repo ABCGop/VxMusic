@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-anydpi-v21/ic_call_answer_video.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable-anydpi-v21/ic_call_answer_video.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-anydpi-v21/ic_call_decline.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable-anydpi-v21/ic_call_decline.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-anydpi-v21/ic_call_answer_low.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable-anydpi-v21/ic_call_answer_low.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-anydpi-v21/ic_call_answer.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable-anydpi-v21/ic_call_answer.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-anydpi-v21/ic_call_answer_video_low.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable-anydpi-v21/ic_call_answer_video_low.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-anydpi-v21/ic_call_decline_low.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable-anydpi-v21/ic_call_decline_low.xml"
+    }
+]

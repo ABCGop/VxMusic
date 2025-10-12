@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-v21/abc_list_divider_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable-v21/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-v21/abc_btn_colored_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-v21/preference_list_divider_material.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/drawable-v21/preference_list_divider_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-v21/notification_action_background.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-v21/abc_edit_text_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-v21/abc_dialog_material_background.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/drawable-v21/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/drawable-v21/ic_arrow_down_24dp.xml",
+        "source": "com.liskovsoft.googleapi-preference-1.1.0-0:/drawable-v21/ic_arrow_down_24dp.xml"
+    }
+]

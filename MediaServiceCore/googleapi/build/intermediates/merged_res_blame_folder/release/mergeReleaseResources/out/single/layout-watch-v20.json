@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "com.liskovsoft.googleapi-appcompat-1.2.0-8:/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    }
+]

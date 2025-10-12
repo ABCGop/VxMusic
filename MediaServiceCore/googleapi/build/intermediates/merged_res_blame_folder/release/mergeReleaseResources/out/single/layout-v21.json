@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout-v21/notification_action.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "com.liskovsoft.googleapi-release-16:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.liskovsoft.googleapi-core-1.12.0-1:/layout-v21/notification_template_icon_group.xml"
+    }
+]
