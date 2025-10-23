@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts for enhanced typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Modern Music App Color Palette - Ocean Blue Theme */
+    --background: 210 30% 98%;
+    --foreground: 215 25% 10%;
+    
+    /* Premium Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 10%;
+    --card-hover: 210 20% 96%;
+    
+    /* Interactive Elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 10%;
+    
+    /* Brand Colors - Ocean Theme */
+    --primary: 200 95% 45%; /* Deep Ocean Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 200 95% 40%;
+    
+    /* Gradient Colors */
+    --gradientfrom: 200 95% 45%; /* Ocean Blue Start */
+    --gradientto: 165 85% 40%; /* Teal End */
+    
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 215 25% 20%;
+    --secondary-hover: 210 15% 88%;
+    
+    /* Accent Colors for Music Elements */
+    --accent: 165 85% 40%; /* Teal Accent */
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 165 85% 35%;
+    
+    /* Muted Colors */
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 15% 40%;
+    
+    /* Status Colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 35 90% 55%;
+    --warning-foreground: 0 0% 100%;
+    --success: 140 70% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* UI Elements */
+        --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 200 95% 45%;
+    --radius: 0.75rem;
+    
+    /* Music App Specific Colors */
+    --player-bg: 0 0% 100%;
+    --waveform: 200 95% 45%;
+    --track-active: 165 85% 40%;
+    --track-inactive: 215 15% 55%;
+    
+    /* Gradient System */
+    --gradient-primary: linear-gradient(135deg, hsl(200 95% 45%) 0%, hsl(210 85% 50%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(165 85% 40%) 0%, hsl(175 80% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(200 95% 45%) 0%, hsl(210 85% 50%) 50%, hsl(165 85% 40%) 100%);
+    
+    /* Animation Variables */
+    --animation-slow: 1000ms;
+    --animation-normal: 500ms;
+    --animation-fast: 200ms;
+    
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  }
+
+  .dark {
+    /* Dark Mode - Ocean Night Theme */
+    --background: 215 30% 8%;
+    --foreground: 210 20% 95%;
+    
+    /* Dark Cards with Subtle Elevation */
+    --card: 215 25% 10%;
+    --card-foreground: 210 20% 95%;
+    --card-hover: 215 25% 12%;
+    
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 20% 95%;
+    
+    /* Enhanced Brand Colors for Dark Mode */
+    --primary: 200 90% 60%;
+    --primary-foreground: 215 30% 8%;
+    --primary-hover: 200 90% 65%;
+    
+    --secondary: 215 20% 18%;
+    --secondary-foreground: 210 20% 95%;
+    --secondary-hover: 215 20% 22%;
+    
+    --accent: 165 80% 50%;
+    --accent-foreground: 215 30% 8%;
+    --accent-hover: 165 80% 55%;
+    
+    /* Gradient Colors - Dark Mode */
+    --gradientfrom: 200 90% 60%; /* Lighter Ocean Blue for Dark */
+    --gradientto: 165 80% 50%; /* Brighter Teal for Dark */
+    
+    --muted: 215 20% 15%;
+    --muted-foreground: 210 15% 80%;
+    
+    /* Status Colors - Dark Mode Optimized */
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 210 20% 95%;
+    --warning: 35 85% 60%;
+    --warning-foreground: 215 30% 8%;
+    --success: 140 65% 50%;
+    --success-foreground: 210 20% 95%;
+    
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 200 90% 60%;
+    
+    /* Dark Mode Music App Colors */
+    --player-bg: 215 30% 6%;
+    --waveform: 200 90% 60%;
+    --track-active: 165 80% 50%;
+    --track-inactive: 215 15% 50%;
+    
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 90% 60%) 0%, hsl(210 80% 65%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(165 80% 50%) 0%, hsl(175 75% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(200 90% 60%) 0%, hsl(210 80% 65%) 50%, hsl(165 80% 50%) 100%);
+    
+    /* Dark Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+    font-family: 'Inter', var(--font-sfpdisplay), system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" 32;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Enhanced Typography System */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    font-variation-settings: "opsz" 32;
+  }
+  
+  h1 {
+    @apply text-4xl lg:text-6xl;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-5xl;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl;
+    line-height: 1.3;
+  }
+  
+  /* Code Elements */
+  code {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    @apply text-sm bg-muted px-1.5 py-0.5 rounded-md;
+  }
+  
+  /* Selection Styling */
+  ::selection {
+    @apply bg-primary/20 text-primary-foreground;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Glass Effect - Optimized */
+  .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    @apply transition-all duration-150;
+  }
+  
+  /* Enhanced Button Styles - Optimized */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary text-primary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-150 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-primary:hover {
+    background-color: hsl(var(--primary-hover));
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary text-secondary-foreground px-6 py-3 rounded-xl font-medium transition-all duration-150;
+  }
+  
+  .btn-secondary:hover {
+    background-color: hsl(var(--secondary-hover));
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-muted text-foreground px-6 py-3 rounded-xl font-medium transition-all duration-150;
+  }
+  
+  /* Card Components - Optimized */
+  .card-elevated {
+    @apply bg-card border border-border rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-200;
+  }
+  
+  .card-glass {
+    @apply glass rounded-2xl p-6 transition-all duration-200 hover:scale-105;
+  }
+  
+  /* Music Player Elements - Optimized */
+  .waveform-bar {
+    background-color: hsl(var(--track-inactive));
+    @apply transition-all duration-150;
+  }
+  
+  .waveform-bar.active {
+    background-color: hsl(var(--track-active));
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Loading States */
+  .pulse-glow {
+    @apply animate-pulse;
+    box-shadow: 0 0 20px var(--primary);
+  }
+}
+
+@layer utilities {
+  /* Custom Animations - Optimized */
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slide-up {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+  
+  /* Responsive Text Sizes */
+  .text-hero {
+    @apply text-5xl lg:text-7xl xl:text-8xl font-bold;
+  }
+  
+  .text-display {
+    @apply text-4xl lg:text-5xl xl:text-6xl font-semibold;
+  }
+  
+  /* Background Patterns */
+  .bg-grid {
+    background-image: radial-gradient(circle, hsl(var(--muted-foreground)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .bg-dots {
+    background-image: radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.1;
+  }
+  
+  /* Focus States */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-1;
+  }
+  
+  .hover-glow {
+    @apply transition-shadow duration-200 hover:shadow-lg hover:shadow-primary/25;
+  }
+  
+  /* Text Utilities */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Blog Content Styling */
+  .blog-content {
+    line-height: 1.7;
+  }
+  
+  .blog-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: hsl(var(--foreground));
+  }
+  
+  .blog-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: hsl(var(--foreground));
+  }
+  
+  .blog-content p {
+    margin-bottom: 1.25rem;
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .blog-content ul, .blog-content ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+  }
+  
+  .blog-content li {
+    margin-bottom: 0.5rem;
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .blog-content strong {
+    font-weight: 600;
+    color: hsl(var(--foreground));
+  }
+  
+  .blog-content a {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    text-decoration-color: hsl(var(--primary));
+  }
+  
+  .blog-content a:hover {
+    color: hsl(var(--primary-hover));
+  }
+  
+  .blog-content .card-elevated {
+    margin: 1.5rem 0;
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@heroicons/react": "^2.2.0",
+    "@hookform/resolvers": "^3.3.2",
+    "@nextui-org/react": "^2.2.9",
+    "@radix-ui/react-context-menu": "^2.1.5",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-hover-card": "^1.0.7",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-menubar": "^1.0.4",
+    "@radix-ui/react-navigation-menu": "^1.1.4",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@react-spring/web": "^9.7.3",
+    "appwrite": "^17.0.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.12",
+    "lucide-react": "^0.294.0",
+    "next": "^14.2.32",
+    "next-themes": "^0.2.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.48.2",
+    "react-icons": "^4.12.0",
+    "react-markdown": "^10.1.0",
+    "react-spring": "^9.7.3",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
+    "styled-components": "^6.1.1",
+    "swr": "^2.2.4",
+    "tailwind-merge": "^2.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "postcss": "^8.5.6"
+  }
+}
