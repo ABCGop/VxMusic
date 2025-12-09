@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VxMusic Admin Control Panel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0A0A0F 0%, #1A1A24 100%);
+            color: #F9FAFB;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid #8B5CF6;
+            border-radius: 20px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .admin-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: rgba(26, 26, 36, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(20px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-icon {
+            font-size: 28px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #9CA3AF;
+            font-weight: 500;
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(15, 15, 20, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #F9FAFB;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .input-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #8B5CF6;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #DC2626, #EF4444);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #059669, #10B981);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #D97706, #F59E0B);
+        }
+
+        .user-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .user-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(15, 15, 20, 0.5);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .user-info {
+            flex: 1;
+        }
+
+        .user-id {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .user-status {
+            font-size: 12px;
+            color: #9CA3AF;
+        }
+
+        .user-status.blocked {
+            color: #EF4444;
+        }
+
+        .user-status.active {
+            color: #10B981;
+        }
+
+        .toggle-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .toggle-btn.block {
+            background: rgba(239, 68, 68, 0.2);
+            color: #EF4444;
+            border: 1px solid #EF4444;
+        }
+
+        .toggle-btn.unblock {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10B981;
+            border: 1px solid #10B981;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: rgba(15, 15, 20, 0.5);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #9CA3AF;
+            margin-top: 5px;
+        }
+
+        .color-picker-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .color-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-input input[type="color"] {
+            width: 50px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .preview-box {
+            padding: 20px;
+            background: rgba(15, 15, 20, 0.8);
+            border-radius: 12px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .preview-title {
+            font-size: 12px;
+            color: #9CA3AF;
+            margin-bottom: 10px;
+        }
+
+        .preview-content {
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .log-item {
+            padding: 10px;
+            background: rgba(15, 15, 20, 0.5);
+            border-left: 3px solid #8B5CF6;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .log-time {
+            color: #9CA3AF;
+            font-size: 11px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #374151;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .feature-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(15, 15, 20, 0.5);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .feature-label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 15, 20, 0.5);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8B5CF6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login Screen -->
+    <div id="loginContainer" class="login-container">
+        <div class="login-card">
+            <div class="login-icon">🛡️</div>
+            <h1 class="login-title">Admin Login</h1>
+            <p class="login-subtitle">VxMusic Control Panel</p>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="admin@vxmusic.com" required autocomplete="email">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required
+                        autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                    🔐 Sign In
+                </button>
+            </form>
+
+            <p style="margin-top: 24px; color: #6B7280; font-size: 12px;">
+                Authorized access only. All activity is logged.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content (shown after login) -->
+    <div id="mainContent" class="container">
+        <div class="header">
+            <h1>🛡️ VxMusic Admin Panel</h1>
+            <div>
+                <div class="admin-badge">🔐 Admin Access</div>
+                <span style="color: #9CA3AF; font-size: 12px; margin: 0 16px;" id="adminEmail"></span>
+                <button class="logout-btn" onclick="handleLogout()">🚪 Logout</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="totalUsers">0</div>
+                <div class="stat-label">Total Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="activeUsers">0</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="blockedUsers">0</div>
+                <div class="stat-label">Blocked Users</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- User Management -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">👥</span>
+                    <span class="card-title">User Management</span>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="searchUser" placeholder="Search by User ID..." oninput="filterUsers()">
+                </div>
+                <div class="user-list" id="userList">
+                    <div style="text-align: center; color: #9CA3AF; padding: 40px;">
+                        No users found
+                    </div>
+                </div>
+            </div>
+
+            <!-- Push Notification -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">📢</span>
+                    <span class="card-title">Push Notification</span>
+                </div>
+                <div class="input-group">
+                    <label>Target</label>
+                    <select id="notificationTarget">
+                        <option value="all">All Users</option>
+                        <option value="active">Active Users Only</option>
+                        <option value="specific">Specific User</option>
+                    </select>
+                </div>
+                <div class="input-group" id="specificUserGroup" style="display: none;">
+                    <label>User ID</label>
+                    <input type="text" id="specificUserId" placeholder="Enter User ID">
+                </div>
+                <div class="input-group">
+                    <label>Title</label>
+                    <input type="text" id="notificationTitle" placeholder="e.g., New Feature Available!">
+                </div>
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea id="notificationMessage" placeholder="Enter your message..."></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="sendNotification()">
+                    📤 Send Notification
+                </button>
+            </div>
+
+            <!-- In-App Popup -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">💬</span>
+                    <span class="card-title">In-App Popup</span>
+                </div>
+                <div class="input-group">
+                    <label>Popup Type</label>
+                    <select id="popupType">
+                        <option value="info">Information</option>
+                        <option value="warning">Warning</option>
+                        <option value="update">Update Available</option>
+                        <option value="promo">Promotion</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Title</label>
+                    <input type="text" id="popupTitle" placeholder="Popup title">
+                </div>
+                <div class="input-group">
+                    <label>Message</label>
+                    <textarea id="popupMessage" placeholder="Popup message content..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Button Text (optional)</label>
+                    <input type="text" id="popupButton" placeholder="e.g., Got it, Update Now">
+                </div>
+                <div class="input-group">
+                    <label>Button Action URL (optional)</label>
+                    <input type="text" id="popupActionUrl" placeholder="e.g., https://yourapp.com/update">
+                </div>
+                <button class="btn btn-warning" onclick="sendPopup()">
+                    💬 Show Popup to All Users
+                </button>
+            </div>
+
+            <!-- UI Theme Control -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🎨</span>
+                    <span class="card-title">UI Theme Control</span>
+                </div>
+                <div class="input-group">
+                    <label>Primary Color</label>
+                    <div class="color-input">
+                        <input type="color" id="primaryColor" value="#8B5CF6" oninput="updatePreview()">
+                        <input type="text" id="primaryColorHex" value="#8B5CF6" oninput="syncColor('primary')">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Secondary Color</label>
+                    <div class="color-input">
+                        <input type="color" id="secondaryColor" value="#3B82F6" oninput="updatePreview()">
+                        <input type="text" id="secondaryColorHex" value="#3B82F6" oninput="syncColor('secondary')">
+                    </div>
+                </div>
+                <div class="preview-box">
+                    <div class="preview-title">Live Preview</div>
+                    <div class="preview-content" id="colorPreview">
+                        Sample Button
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="pushThemeUpdate()">
+                    🎨 Push Theme Update
+                </button>
+            </div>
+
+            <!-- Feature Toggles -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">⚙️</span>
+                    <span class="card-title">Feature Toggles</span>
+                </div>
+                <div class="feature-toggle">
+                    <span class="feature-label">AI Lyrics</span>
+                    <label class="switch">
+                        <input type="checkbox" id="featureAiLyrics" checked
+                            onchange="toggleFeature('aiLyrics', this.checked)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="feature-toggle">
+                    <span class="feature-label">Spotify Integration</span>
+                    <label class="switch">
+                        <input type="checkbox" id="featureSpotify" checked
+                            onchange="toggleFeature('spotify', this.checked)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="feature-toggle">
+                    <span class="feature-label">YouTube Music</span>
+                    <label class="switch">
+                        <input type="checkbox" id="featureYtMusic" checked
+                            onchange="toggleFeature('ytMusic', this.checked)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="feature-toggle">
+                    <span class="feature-label">Downloads</span>
+                    <label class="switch">
+                        <input type="checkbox" id="featureDownloads" checked
+                            onchange="toggleFeature('downloads', this.checked)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="feature-toggle">
+                    <span class="feature-label">Social Sharing</span>
+                    <label class="switch">
+                        <input type="checkbox" id="featureSocialShare" checked
+                            onchange="toggleFeature('socialShare', this.checked)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">📋</span>
+                    <span class="card-title">Activity Log</span>
+                </div>
+                <div class="user-list" id="activityLog">
+                    <div style="text-align: center; color: #9CA3AF; padding: 40px;">
+                        No activity yet
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style id="loginStyles">
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: rgba(26, 26, 36, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(20px);
+            text-align: center;
+        }
+
+        .login-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+
+        .login-title {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .login-subtitle {
+            color: #9CA3AF;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #EF4444;
+            color: #EF4444;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        #mainContent {
+            display: none;
+        }
+
+        #mainContent.authenticated {
+            display: block;
+        }
+
+        .logout-btn {
+            padding: 8px 16px;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #EF4444;
+            border-radius: 8px;
+            color: #EF4444;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin-left: 16px;
+        }
+
+        .logout-btn:hover {
+            background: rgba(239, 68, 68, 0.3);
+        }
+    </style>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase, ref, onValue, set, update, remove, push } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+
+        // Your Firebase config (replace with your actual config)
+        const firebaseConfig = {
+            apiKey: "AIzaSyCrP_mGG6WUc9RvyEobWOTfcONW-8sdSfM",
+            authDomain: "vxmusic-abcg.firebaseapp.com",
+            databaseURL: "https://vxmusic-abcg-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "vxmusic-abcg",
+            storageBucket: "vxmusic-abcg.firebasestorage.app",
+            messagingSenderId: "97371051620",
+            appId: "1:97371051620:web:685c42c4c91447cd23b171",
+            measurementId: "G-MF8DCWPFKT"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth(app);
+
+        // Check authentication on load
+        let isAuthenticated = false;
+
+        console.log('Firebase initialized, waiting for auth state...');
+
+        onAuthStateChanged(auth, (user) => {
+            console.log('Auth state changed:', user ? user.email : 'Not logged in');
+
+            if (user) {
+                // User is signed in
+                isAuthenticated = true;
+                console.log('User authenticated, showing main content');
+                console.log('🔑 YOUR ADMIN UID:', user.uid);
+                console.log('📋 Copy this UID and paste it in Firebase Database Rules where it says YOUR_ADMIN_UID');
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('mainContent').classList.add('authenticated');
+                document.getElementById('adminEmail').textContent = user.email;
+                loadApp();
+            } else {
+                // User is signed out
+                isAuthenticated = false;
+                console.log('User not authenticated, showing login');
+                document.getElementById('loginContainer').style.display = 'flex';
+                document.getElementById('mainContent').classList.remove('authenticated');
+            }
+        });
+
+        // Login function
+        window.handleLogin = async function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const errorMsg = document.getElementById('errorMessage');
+            const loginBtn = document.getElementById('loginBtn');
+
+            console.log('Attempting login for:', email);
+
+            errorMsg.classList.remove('show');
+            loginBtn.disabled = true;
+            loginBtn.textContent = 'Signing in...';
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                console.log('Login successful!', userCredential.user.email);
+                // Success - onAuthStateChanged will handle UI update
+                // Note: addLog will be called after auth state changes
+            } catch (error) {
+                console.error('Login error:', error.code, error.message);
+                let errorMessage = 'Invalid email or password';
+
+                switch (error.code) {
+                    case 'auth/invalid-email':
+                        errorMessage = 'Invalid email address';
+                        break;
+                    case 'auth/user-disabled':
+                        errorMessage = 'This account has been disabled';
+                        break;
+                    case 'auth/user-not-found':
+                        errorMessage = 'No account found with this email';
+                        break;
+                    case 'auth/wrong-password':
+                        errorMessage = 'Incorrect password';
+                        break;
+                    case 'auth/too-many-requests':
+                        errorMessage = 'Too many failed attempts. Try again later';
+                        break;
+                }
+
+                errorMsg.textContent = errorMessage;
+                errorMsg.classList.add('show');
+            } finally {
+                loginBtn.disabled = false;
+                loginBtn.textContent = '🔐 Sign In';
+            }
+        };
+
+        // Logout function
+        window.handleLogout = async function () {
+            try {
+                const email = auth.currentUser?.email;
+                console.log('Logging out:', email);
+                await signOut(auth);
+                if (isAuthenticated) {
+                    addLog(`Admin logged out: ${email}`);
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        };
+
+        let allUsers = {};
+
+        // Load app data (called after authentication)
+        function loadApp() {
+            console.log('Loading app data...');
+            try {
+                // Setup event listeners first
+                setupEventListeners();
+
+                // Load data
+                loadUsers();
+                loadLogs();
+                loadConfig();
+
+                // Log successful login after everything is loaded
+                if (auth.currentUser) {
+                    addLog(`Admin logged in: ${auth.currentUser.email}`);
+                }
+            } catch (error) {
+                console.error('Error loading app:', error);
+            }
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Notification target change
+            const notificationTarget = document.getElementById('notificationTarget');
+            if (notificationTarget) {
+                notificationTarget.addEventListener('change', (e) => {
+                    document.getElementById('specificUserGroup').style.display =
+                        e.target.value === 'specific' ? 'block' : 'none';
+                });
+            }
+        }
+
+        // Load all users
+        function loadUsers() {
+            console.log('Loading users from database...');
+            const usersRef = ref(database, 'users');
+            onValue(usersRef, (snapshot) => {
+                allUsers = snapshot.val() || {};
+                console.log('Users loaded:', Object.keys(allUsers).length);
+                renderUsers();
+                updateStats();
+            }, (error) => {
+                console.error('Error loading users:', error);
+            });
+        }
+
+        function renderUsers() {
+            const userList = document.getElementById('userList');
+            if (!userList) {
+                console.error('User list element not found');
+                return;
+            }
+
+            const searchInput = document.getElementById('searchUser');
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+
+            const filteredUsers = Object.entries(allUsers).filter(([userId]) =>
+                userId.toLowerCase().includes(searchTerm)
+            );
+
+            console.log('Rendering users:', filteredUsers.length);
+
+            if (filteredUsers.length === 0) {
+                userList.innerHTML = '<div style="text-align: center; color: #9CA3AF; padding: 40px;">No users found</div>';
+                return;
+            }
+
+            userList.innerHTML = filteredUsers.map(([userId, userData]) => `
+                <div class="user-item">
+                    <div class="user-info">
+                        <div class="user-id">${userId}</div>
+                        <div class="user-status ${userData.blocked ? 'blocked' : 'active'}">
+                            ${userData.blocked ? '🚫 Blocked' : '✅ Active'} • 
+                            ${userData.lastSeen ? new Date(userData.lastSeen).toLocaleString() : 'Never'}
+                        </div>
+                    </div>
+                    <button class="toggle-btn ${userData.blocked ? 'unblock' : 'block'}" 
+                            onclick="window.toggleUserBlock('${userId}', ${!userData.blocked})">
+                        ${userData.blocked ? 'Unblock' : 'Block'}
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        window.filterUsers = renderUsers;
+
+        function updateStats() {
+            const total = Object.keys(allUsers).length;
+            const blocked = Object.values(allUsers).filter(u => u.blocked).length;
+            const active = total - blocked;
+
+            document.getElementById('totalUsers').textContent = total;
+            document.getElementById('activeUsers').textContent = active;
+            document.getElementById('blockedUsers').textContent = blocked;
+        }
+
+        window.toggleUserBlock = async function (userId, shouldBlock) {
+            if (!isAuthenticated) {
+                alert('You must be logged in to perform this action');
+                return;
+            }
+
+            await update(ref(database, `users/${userId}`), {
+                blocked: shouldBlock,
+                blockedAt: shouldBlock ? Date.now() : null
+            });
+
+            // Send notification to user
+            if (shouldBlock) {
+                await set(push(ref(database, `popups/${userId}`)), {
+                    type: 'warning',
+                    title: 'Account Suspended',
+                    message: 'Your account has been temporarily suspended. Please contact support.',
+                    timestamp: Date.now(),
+                    dismissible: false
+                });
+            }
+
+            addLog(`${shouldBlock ? 'Blocked' : 'Unblocked'} user: ${userId}`);
+        };
+
+        window.sendNotification = async function () {
+            if (!isAuthenticated) {
+                alert('You must be logged in to perform this action');
+                return;
+            }
+
+            const target = document.getElementById('notificationTarget').value;
+            const title = document.getElementById('notificationTitle').value;
+            const message = document.getElementById('notificationMessage').value;
+
+            if (!title || !message) {
+                alert('Please fill in title and message');
+                return;
+            }
+
+            const notification = {
+                title,
+                message,
+                timestamp: Date.now(),
+                read: false
+            };
+
+            if (target === 'all') {
+                for (const userId of Object.keys(allUsers)) {
+                    await set(push(ref(database, `notifications/${userId}`)), notification);
+                }
+                addLog(`Sent notification to all users: "${title}"`);
+            } else if (target === 'active') {
+                const activeUserIds = Object.entries(allUsers)
+                    .filter(([_, data]) => !data.blocked)
+                    .map(([id]) => id);
+                for (const userId of activeUserIds) {
+                    await set(push(ref(database, `notifications/${userId}`)), notification);
+                }
+                addLog(`Sent notification to ${activeUserIds.length} active users: "${title}"`);
+            } else {
+                const userId = document.getElementById('specificUserId').value.trim();
+                if (!userId) {
+                    alert('Please enter a User ID');
+                    return;
+                }
+                await set(push(ref(database, `notifications/${userId}`)), notification);
+                addLog(`Sent notification to ${userId}: "${title}"`);
+            }
+
+            document.getElementById('notificationTitle').value = '';
+            document.getElementById('notificationMessage').value = '';
+            alert('Notification sent successfully!');
+        };
+
+        window.sendPopup = async function () {
+            if (!isAuthenticated) {
+                alert('You must be logged in to perform this action');
+                return;
+            }
+
+            const type = document.getElementById('popupType').value;
+            const title = document.getElementById('popupTitle').value;
+            const message = document.getElementById('popupMessage').value;
+            const buttonText = document.getElementById('popupButton').value;
+            const actionUrl = document.getElementById('popupActionUrl').value;
+
+            if (!title || !message) {
+                alert('Please fill in title and message');
+                return;
+            }
+
+            const popup = {
+                type,
+                title,
+                message,
+                buttonText: buttonText || 'OK',
+                actionUrl: actionUrl || null,
+                timestamp: Date.now(),
+                dismissible: true
+            };
+
+            // Send to all users
+            for (const userId of Object.keys(allUsers)) {
+                await set(push(ref(database, `popups/${userId}`)), popup);
+            }
+
+            addLog(`Sent popup to all users: "${title}"`);
+            alert('Popup sent to all users!');
+
+            document.getElementById('popupTitle').value = '';
+            document.getElementById('popupMessage').value = '';
+            document.getElementById('popupButton').value = '';
+            document.getElementById('popupActionUrl').value = '';
+        };
+
+        window.updatePreview = function () {
+            const primary = document.getElementById('primaryColor').value;
+            const secondary = document.getElementById('secondaryColor').value;
+            document.getElementById('primaryColorHex').value = primary;
+            document.getElementById('secondaryColorHex').value = secondary;
+            document.getElementById('colorPreview').style.background =
+                `linear-gradient(135deg, ${primary}, ${secondary})`;
+        };
+
+        window.syncColor = function (type) {
+            if (type === 'primary') {
+                const hex = document.getElementById('primaryColorHex').value;
+                document.getElementById('primaryColor').value = hex;
+            } else {
+                const hex = document.getElementById('secondaryColorHex').value;
+                document.getElementById('secondaryColor').value = hex;
+            }
+            updatePreview();
+        };
+
+        window.pushThemeUpdate = async function () {
+            if (!isAuthenticated) {
+                alert('You must be logged in to perform this action');
+                return;
+            }
+
+            const primaryColor = document.getElementById('primaryColor').value;
+            const secondaryColor = document.getElementById('secondaryColor').value;
+
+            await set(ref(database, 'config/theme'), {
+                primaryColor,
+                secondaryColor,
+                updatedAt: Date.now()
+            });
+
+            addLog(`Pushed theme update: ${primaryColor} / ${secondaryColor}`);
+            alert('Theme updated! Users will see changes on next app launch.');
+        };
+
+        window.toggleFeature = async function (featureName, enabled) {
+            if (!isAuthenticated) {
+                alert('You must be logged in to perform this action');
+                return;
+            }
+
+            await update(ref(database, 'config/features'), {
+                [featureName]: enabled,
+                [`${featureName}UpdatedAt`]: Date.now()
+            });
+
+            addLog(`${enabled ? 'Enabled' : 'Disabled'} feature: ${featureName}`);
+        };
+
+        function addLog(message) {
+            if (!isAuthenticated) {
+                console.log('Not logging (not authenticated):', message);
+                return;
+            }
+            try {
+                console.log('Adding log:', message);
+                const logRef = push(ref(database, 'admin/logs'));
+                set(logRef, {
+                    message,
+                    timestamp: Date.now()
+                }).catch(error => {
+                    console.error('Error saving log:', error);
+                });
+            } catch (error) {
+                console.error('Error creating log:', error);
+            }
+        }
+
+        // Load activity logs
+        function loadLogs() {
+            console.log('Loading activity logs...');
+            const logsRef = ref(database, 'admin/logs');
+            onValue(logsRef, (snapshot) => {
+                const logs = snapshot.val() || {};
+                console.log('Logs loaded:', Object.keys(logs).length);
+                const logList = document.getElementById('activityLog');
+                if (!logList) {
+                    console.error('Activity log element not found');
+                    return;
+                }
+
+                const sortedLogs = Object.entries(logs)
+                    .sort(([, a], [, b]) => b.timestamp - a.timestamp)
+                    .slice(0, 20);
+
+                if (sortedLogs.length === 0) {
+                    logList.innerHTML = '<div style="text-align: center; color: #9CA3AF; padding: 40px;">No activity yet</div>';
+                    return;
+                }
+
+                logList.innerHTML = sortedLogs.map(([id, log]) => `
+                    <div class="log-item">
+                        <div>${log.message}</div>
+                        <div class="log-time">${new Date(log.timestamp).toLocaleString()}</div>
+                    </div>
+                `).join('');
+            });
+        }
+
+        // Load current config
+        function loadConfig() {
+            console.log('Loading config...');
+            const configRef = ref(database, 'config');
+            onValue(configRef, (snapshot) => {
+                const config = snapshot.val() || {};
+                console.log('Config loaded:', config);
+
+                if (config.theme) {
+                    document.getElementById('primaryColor').value = config.theme.primaryColor || '#8B5CF6';
+                    document.getElementById('secondaryColor').value = config.theme.secondaryColor || '#3B82F6';
+                    updatePreview();
+                }
+
+                if (config.features) {
+                    Object.entries(config.features).forEach(([feature, enabled]) => {
+                        const checkbox = document.getElementById(`feature${feature.charAt(0).toUpperCase() + feature.slice(1)}`);
+                        if (checkbox) checkbox.checked = enabled;
+                    });
+                }
+            });
+        }
+
+        // Initialize preview when DOM is ready
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, initializing preview');
+            try {
+                updatePreview();
+            } catch (error) {
+                console.error('Error initializing preview:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

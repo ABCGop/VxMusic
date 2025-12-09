@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VxMusic God Mode Admin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f3ff;
+            --secondary: #bd00ff;
+            --bg-dark: #0a0a12;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(189, 0, 255, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.2) 0%, transparent 40%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 30px;
+        }
+
+        .h1-title {
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(189, 0, 255, 0.3);
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ccc;
+            font-weight: 500;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 15px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            border: none;
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(189, 0, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 243, 255, 0.6);
+        }
+
+        .preview-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .preview-image {
+            width: 100%;
+            height: 200px;
+            background-color: #2a2a2a;
+            object-fit: cover;
+            display: none;
+        }
+
+        .preview-content {
+            padding: 16px;
+        }
+
+        .preview-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .preview-body {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .chip-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .chip {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .chip.active {
+            background: rgba(0, 243, 255, 0.2);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .status-pill {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 50px;
+            background: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="glass-panel">
+            <h1 class="h1-title">
+                <i class="fas fa-rocket"></i> VxMusic Admin
+                <span class="status-pill" id="connectionStatus">● Connected</span>
+            </h1>
+
+            <div class="input-group">
+                <label>Target Audience</label>
+                <div class="chip-group">
+                    <div class="chip active" onclick="setTarget('all')">All Users</div>
+                    <div class="chip" onclick="setTarget('android')">Android Only</div>
+                    <div class="chip" onclick="setTarget('beta')">Beta Testers</div>
+                </div>
+                <input type="hidden" id="target" value="all">
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-heading"></i> Title</label>
+                <input type="text" id="title" placeholder="e.g. Monthly Wrapped is Here!" oninput="updatePreview()">
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-align-left"></i> Message Body</label>
+                <textarea id="body" rows="4" placeholder="Check out your top songs..."
+                    oninput="updatePreview()"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-image"></i> Image URL</label>
+                <input type="url" id="imageUrl" placeholder="https://..." oninput="updatePreview()">
+            </div>
+
+            <div class="input-group">
+                <label><i class="fas fa-link"></i> Deep Link (Action)</label>
+                <div style="display: flex; gap: 10px;">
+                    <select id="deepLinkSelect" onchange="fillDeepLink()" style="flex: 1;">
+                        <option value="">Select Action...</option>
+                        <option value="vxmusic://home">Go Home</option>
+                        <option value="vxmusic://wrapped">Open Wrapped</option>
+                        <option value="vxmusic://pro">Open Pro Plan</option>
+                        <option value="vxmusic://recent">Open Recent Songs</option>
+                        <option value="vxmusic://settings">Open Settings</option>
+                    </select>
+                    <input type="text" id="deepLink" placeholder="vxmusic://..." style="flex: 2;">
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="sendNotification()">
+                <i class="fas fa-paper-plane"></i> BLAST NOTIFICATION
+            </button>
+        </div>
+
+        <!-- Right Side: Preview -->
+        <div>
+            <div class="glass-panel">
+                <h3><i class="fas fa-mobile-alt"></i> Live Preview</h3>
+                <div class="preview-card">
+                    <img id="previewImg" src="" class="preview-image">
+                    <div class="preview-content">
+                        <div id="previewTitle" class="preview-title">Notification Title</div>
+                        <div id="previewBody" class="preview-body">Notification message will appear here...</div>
+                    </div>
+                </div>
+                <div style="margin-top: 20px; font-size: 0.9rem; color: #888;">
+                    <p><i class="fas fa-info-circle"></i> <strong>Deep Link:</strong> <span id="previewLink">None</span>
+                    </p>
+                    <p><i class="fas fa-users"></i> <strong>Target:</strong> <span id="previewTarget">All Users</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="glass-panel" style="margin-top: 20px;">
+                <h3><i class="fas fa-terminal"></i> Logs</h3>
+                <div id="logs"
+                    style="font-family: monospace; font-size: 0.8rem; height: 150px; overflow-y: auto; color: #00f3ff;">
+                    > System ready...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updatePreview() {
+            const title = document.getElementById('title').value;
+            const body = document.getElementById('body').value;
+            const img = document.getElementById('imageUrl').value;
+            const link = document.getElementById('deepLink').value;
+
+            document.getElementById('previewTitle').innerText = title || "Notification Title";
+            document.getElementById('previewBody').innerText = body || "Notification message will appear here...";
+            document.getElementById('previewLink').innerText = link || "None";
+
+            const imgEl = document.getElementById('previewImg');
+            if (img) {
+                imgEl.src = img;
+                imgEl.style.display = 'block';
+            } else {
+                imgEl.style.display = 'none';
+            }
+        }
+
+        function setTarget(val) {
+            document.getElementById('target').value = val;
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('previewTarget').innerText = val.toUpperCase();
+        }
+
+        function fillDeepLink() {
+            const val = document.getElementById('deepLinkSelect').value;
+            if (val) document.getElementById('deepLink').value = val;
+            updatePreview();
+        }
+
+        function log(msg) {
+            const logs = document.getElementById('logs');
+            const time = new Date().toLocaleTimeString();
+            logs.innerHTML = `<div>[${time}] ${msg}</div>` + logs.innerHTML;
+        }
+
+        async function sendNotification() {
+            const title = document.getElementById('title').value;
+            const body = document.getElementById('body').value;
+            const imageUrl = document.getElementById('imageUrl').value;
+            const deepLink = document.getElementById('deepLink').value;
+            const target = document.getElementById('target').value;
+
+            if (!title || !body) {
+                alert('Title and Body are required!');
+                return;
+            }
+
+            const payload = {
+                title,
+                body,
+                imageUrl,
+                deepLink,
+                topic: target === 'all' ? 'all_users' : target // Map UI selection to actual topic
+            };
+
+            log("Sending payload: " + JSON.stringify(payload));
+
+            try {
+                const response = await fetch('/api/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    log("✅ SUCCESS: " + data.message);
+                    alert('Notification Sent Successfully!');
+                } else {
+                    log("❌ ERROR: " + data.error);
+                }
+            } catch (e) {
+                log("❌ NETWORK ERROR: " + e.message);
+            }
+        }
+
+        // Test Connection Mock
+        setTimeout(() => {
+            log("Connected to VxMusic Backend v4.0");
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

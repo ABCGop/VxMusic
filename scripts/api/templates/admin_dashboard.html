@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VxMusic Admin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --sidebar-bg: #111111;
+            --card-bg: #111111;
+            --border: #333333;
+            --accent: #ffffff;
+            --text: #ffffff;
+            --text-secondary: #888888;
+            --danger: #ff4444;
+            --success: #00D369;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 40px;
+            padding-left: 10px;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-item {
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: #222;
+            color: white;
+        }
+
+        .nav-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 250px;
+            flex: 1;
+            padding: 40px;
+            max-width: 1400px;
+        }
+
+        .header {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Sections & Tabs */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Forms */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: white;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #666;
+        }
+
+        /* Chips */
+        .chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .chip {
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .chip.active {
+            background: white;
+            color: black;
+            border-color: white;
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 10px 20px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: #666;
+        }
+
+        .btn-danger {
+            background: rgba(255, 68, 68, 0.1);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+
+        .btn-danger:hover {
+            background: rgba(255, 68, 68, 0.2);
+        }
+
+        /* Logs */
+        .log-entry {
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+
+        .log-time {
+            color: #555;
+            margin-right: 10px;
+        }
+
+        .log-success {
+            color: var(--success);
+        }
+
+        .log-error {
+            color: var(--danger);
+        }
+
+        /* Preview */
+        .preview-box {
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .preview-img {
+            width: 60px;
+            height: 60px;
+            background: #222;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Tables (Users/Content) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        th {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        td {
+            color: var(--text);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Toggles */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #333;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--success);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(16px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="sidebar">
+        <div class="logo"><i class="fas fa-layer-group"></i> VxMusic Admin</div>
+
+        <div class="nav-item active" onclick="switchTab('overview')">
+            <i class="fas fa-home"></i> Overview
+        </div>
+        <div class="nav-item" onclick="switchTab('users')">
+            <i class="fas fa-users"></i> Users
+        </div>
+        <div class="nav-item" onclick="switchTab('notifications')">
+            <i class="fas fa-bell"></i> Notifications
+        </div>
+        <div class="nav-item" onclick="switchTab('content')">
+            <i class="fas fa-music"></i> Content
+        </div>
+        <div class="nav-item" onclick="switchTab('settings')">
+            <i class="fas fa-cog"></i> Settings
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="nav-item" onclick="window.location.href='/logout'">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="header">
+            <div>
+                <h1 id="pageTitle">Overview</h1>
+                <div class="subtitle">System Monitor & Controls</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="width: 8px; height: 8px; background: var(--success); border-radius: 50%;"></span>
+                <span style="font-size: 13px; color: var(--text-secondary);">System Operational</span>
+            </div>
+        </div>
+
+        <!-- TAB: OVERVIEW -->
+        <div id="overview" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Users</div>
+                    <div class="stat-value" id="totalUsers">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active Today</div>
+                    <div class="stat-value" id="activeUsers">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Notifications Sent</div>
+                    <div class="stat-value" id="pushSent">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Server Load</div>
+                    <div class="stat-value" id="serverLoad" style="color: var(--success);">Normal</div>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <div class="section-header">Recent System Logs</div>
+                <div id="logs">
+                    <div class="log-entry"><span class="log-time">System</span> Initializing dashboard...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: USERS -->
+        <div id="users" class="tab-content">
+            <div class="section-card">
+                <div class="section-header">
+                    User Management
+                    <button class="btn btn-outline" style="font-size: 12px; padding: 6px 12px;">Export CSV</button>
+                </div>
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: #666; padding: 30px;">
+                                User management API is currently disabled. <br>
+                                <small>Enable it in admin_server.py to see real data.</small>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB: NOTIFICATIONS -->
+        <div id="notifications" class="tab-content">
+            <div class="section-card">
+                <div class="section-header">
+                    Create Notification
+                    <button class="btn btn-outline" style="font-size: 12px; padding: 6px 12px;"
+                        onclick="clearForm()">Reset</button>
+                </div>
+
+                <div class="form-grid">
+                    <div>
+                        <label>Target Audience</label>
+                        <div class="chips">
+                            <div class="chip active" onclick="setTarget('all', this)">All Users</div>
+                            <div class="chip" onclick="setTarget('android', this)">Android</div>
+                            <div class="chip" onclick="setTarget('ios', this)">iOS</div>
+                            <div class="chip" onclick="setTarget('beta', this)">Beta</div>
+                        </div>
+                        <input type="hidden" id="target" value="all">
+
+                        <label>Title</label>
+                        <input type="text" id="notifTitle" placeholder="Notification Title" oninput="updatePreview()">
+
+                        <label style="margin-top: 15px;">Message</label>
+                        <textarea id="notifBody" rows="4" placeholder="Type your message here..."
+                            oninput="updatePreview()"></textarea>
+                    </div>
+
+                    <div>
+                        <label>Action & Content</label>
+
+                        <div class="form-grid" style="grid-template-columns: 1fr; gap: 10px; margin-bottom: 15px;">
+                            <input type="text" id="notifImage" placeholder="Image URL (Optional)"
+                                oninput="updatePreview()">
+
+                            <div style="display: flex; gap: 10px;">
+                                <select id="deepLinkSelect" onchange="fillDeepLink()" style="width: 140px;">
+                                    <option value="">Quick Link...</option>
+                                    <option value="vxmusic://home">Home</option>
+                                    <option value="vxmusic://wrapped">Wrapped</option>
+                                    <option value="vxmusic://pro">Pro</option>
+                                </select>
+                                <input type="text" id="notifLink" placeholder="Deep Link" oninput="updatePreview()">
+                            </div>
+                        </div>
+
+                        <label>Preview</label>
+                        <div class="preview-box">
+                            <img id="previewImg" class="preview-img" style="display: none;">
+                            <div style="width: 40px; height: 40px; background: #333; border-radius: 8px;"
+                                id="previewPlaceholder"></div>
+                            <div>
+                                <div style="font-weight: 600; font-size: 14px;" id="prevTitle">Title</div>
+                                <div style="color: #888; font-size: 13px;" id="prevBody">Message</div>
+                                <div style="color: var(--text-secondary); font-size: 11px; margin-top: 4px;"
+                                    id="prevLink"></div>
+                            </div>
+                        </div>
+
+                        <button class="btn" style="width: 100%; margin-top: 20px;" onclick="sendNotification()">
+                            Send Notification
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: CONTENT -->
+        <div id="content" class="tab-content">
+            <div class="section-card">
+                <div class="section-header">Content Management</div>
+                <div style="text-align: center; padding: 50px; color: #666;">
+                    <i class="fas fa-music" style="font-size: 48px; margin-bottom: 20px;"></i>
+                    <p>Content Management (Songs/Playlists) is under construction.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: SETTINGS -->
+        <div id="settings" class="tab-content">
+            <div class="form-grid">
+                <!-- Theme Settings -->
+                <div class="section-card">
+                    <div class="section-header">App Theme Control</div>
+                    <label>Primary Color</label>
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                        <input type="color" id="primaryColor" value="#8B5CF6"
+                            style="height: 40px; width: 60px; padding: 2px;">
+                        <input type="text" id="primaryColorHex" value="#8B5CF6">
+                    </div>
+
+                    <label>Secondary Color</label>
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                        <input type="color" id="secondaryColor" value="#3B82F6"
+                            style="height: 40px; width: 60px; padding: 2px;">
+                        <input type="text" id="secondaryColorHex" value="#3B82F6">
+                    </div>
+
+                    <button class="btn" onclick="updateTheme()" style="width: 100%; margin-top: 10px;">Update App
+                        Theme</button>
+                    <button class="btn btn-outline" onclick="resetTheme()" style="width: 100%; margin-top: 10px;">Reset
+                        to Default</button>
+                </div>
+
+                <!-- Feature Toggles -->
+                <div class="section-card">
+                    <div class="section-header">Feature Flags</div>
+                    <div id="featuresList">
+                        <!-- Dynamically Loaded -->
+                        <div
+                            style="padding: 10px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;">
+                            <span>Loading features...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // --- Navigation Logic ---
+        function switchTab(tabId) {
+            // Update Sidebar
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            // Find the clicked nav item based on onclick attribute text or simplified logic
+            // Since we use onclick="switchTab..", we can't easily grab "this" unless passed.
+            // But we can iterate and find matches. simpler: just trust the UI update.
+
+            // Actually, let's update sidebar visual state
+            // Re-query based on tabId index
+            const tabs = ['overview', 'users', 'notifications', 'content', 'settings'];
+            const index = tabs.indexOf(tabId);
+            const navItems = document.querySelectorAll('.sidebar .nav-item');
+            if (navItems[index]) navItems[index].classList.add('active');
+
+            // Show Content
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+
+            // Update Header
+            document.getElementById('pageTitle').innerText = tabId.charAt(0).toUpperCase() + tabId.slice(1);
+
+            // Lazy Load Data
+            if (tabId === 'users') loadUsers();
+        }
+
+        // Pass 'this' in HTML would be better, but index mapping works for now.
+        // Let's refine the HTML onclicks to pass 'this' next time if needed.
+        // For now, I'll update the sidebar active class manually by querySelector in the onclick handlers above? 
+        // No, I need to pass 'this' or use index.
+        // I'll stick to index mapping for simplicity in this generated code.
+        // Overview=0, Users=1, Notif=2, Content=3, Settings=4.
+
+        // --- Users Logic ---
+        async function loadUsers() {
+            const tbody = document.querySelector('#usersTable tbody');
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 20px;">Loading users...</td></tr>';
+
+            try {
+                const res = await fetch('/api/users');
+                const users = await res.json();
+
+                if (!users.length) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 20px;">No users found.</td></tr>';
+                    return;
+                }
+
+                tbody.innerHTML = users.map(u => {
+                    const joined = new Date(u.creation_time).toLocaleDateString();
+                    const status = u.disabled ? '<span style="color:var(--danger)">Disabled</span>' : '<span style="color:var(--success)">Active</span>';
+                    return `
+                        <tr>
+                            <td style="font-family:monospace; font-size:12px; color:#555;">${u.uid.substr(0, 10)}...</td>
+                            <td>
+                                <div>${u.email}</div>
+                                <div style="font-size:11px; color:#666;">${u.display_name}</div>
+                            </td>
+                            <td>${status}</td>
+                            <td>${joined}</td>
+                            <td>
+                                <button class="btn btn-outline" style="padding: 4px 8px; font-size: 11px;">Details</button>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+
+            } catch (e) {
+                console.error(e);
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:var(--danger)">Failed to load users.</td></tr>';
+            }
+        }
+
+        // --- Stats & Data Logic ---
+        async function loadStats() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+
+                document.getElementById('totalUsers').innerText = data.total_users || 0;
+                document.getElementById('activeUsers').innerText = data.active_today || 0;
+                document.getElementById('pushSent').innerText = data.notifications_sent || 0;
+
+                const loadEl = document.getElementById('serverLoad');
+                if (loadEl) {
+                    loadEl.innerText = data.server_load || "Unknown";
+                    if (data.server_load && data.server_load.includes("High")) loadEl.style.color = "var(--danger)";
+                    else if (data.server_load && data.server_load.includes("Medium")) loadEl.style.color = "orange";
+                    else loadEl.style.color = "var(--success)";
+                }
+            } catch (e) { console.error("Stats Error", e); }
+        }
+
+        // --- Notification Logic ---
+        function updatePreview() {
+            const title = document.getElementById('notifTitle').value;
+            const body = document.getElementById('notifBody').value;
+            const link = document.getElementById('notifLink').value;
+            const img = document.getElementById('notifImage').value;
+
+            document.getElementById('prevTitle').innerText = title || "Title";
+            document.getElementById('prevBody').innerText = body || "Message";
+            document.getElementById('prevLink').innerText = link ? `Action: ${link}` : "";
+
+            const imgEl = document.getElementById('previewImg');
+            const phEl = document.getElementById('previewPlaceholder');
+
+            if (img) {
+                imgEl.src = img;
+                imgEl.style.display = 'block';
+                phEl.style.display = 'none';
+            } else {
+                imgEl.style.display = 'none';
+                phEl.style.display = 'block';
+            }
+        }
+
+        async function sendNotification() {
+            const title = document.getElementById('notifTitle').value;
+            const body = document.getElementById('notifBody').value;
+            const img = document.getElementById('notifImage').value;
+            const link = document.getElementById('notifLink').value;
+            const target = document.getElementById('target').value;
+
+            if (!title || !body) { alert("Title and Message required"); return; }
+
+            log(`Sending to ${target}...`);
+            try {
+                await fetch('/api/notifications/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ title, message: body, imageUrl: img, deepLink: link })
+                });
+                log("Notification Sent!", "success");
+            } catch (e) { log("Failed: " + e.message, "error"); }
+        }
+
+        function setTarget(val, el) {
+            document.getElementById('target').value = val;
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        function fillDeepLink() {
+            const val = document.getElementById('deepLinkSelect').value;
+            if (val) document.getElementById('notifLink').value = val;
+            updatePreview();
+        }
+
+        function clearForm() {
+            document.getElementById('notifTitle').value = "";
+            document.getElementById('notifBody').value = "";
+            document.getElementById('notifImage').value = "";
+            document.getElementById('notifLink').value = "";
+            updatePreview();
+        }
+
+        // --- Settings / Features Logic ---
+        async function loadFeatures() {
+            try {
+                const res = await fetch('/api/config');
+                const config = await res.json();
+                const features = config.features || {};
+                const listEl = document.getElementById('featuresList');
+
+                // Define friendly names
+                const titles = {
+                    'maintenance_mode': '⚠️ Maintenance Mode',
+                    'enable_lyrics': '🎤 Lyrics',
+                    'enable_equalizer': '🎚️ Equalizer',
+                    'enable_downloads': '⬇️ Downloads',
+                    'enable_sharing': '🔗 Sharing',
+                    'enable_playlist_creation': '📝 Playlists'
+                };
+
+                listEl.innerHTML = Object.keys(features).map(key => `
+                    <div style="padding: 15px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                        <span style="${key === 'maintenance_mode' ? 'color: var(--danger); font-weight: bold;' : ''}">
+                            ${titles[key] || key}
+                        </span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" ${features[key] ? 'checked' : ''} onchange="toggleFeature('${key}', this.checked)">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                `).join('');
+
+            } catch (e) { console.error("Load Features Failed", e); }
+        }
+
+        async function toggleFeature(key, enabled) {
+            try {
+                // Optimistic UI update already happened via checkbox
+                log(`Toggling ${key} to ${enabled}...`);
+
+                await fetch('/api/features/toggle', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ feature_key: key, enabled: enabled })
+                });
+
+                log(`${key} updated successfully.`, "success");
+
+                if (key === 'maintenance_mode') {
+                    if (enabled) alert("⚠️ SYSTEM IS NOW IN MAINTENANCE MODE");
+                    else alert("✅ System is back online");
+                }
+            } catch (e) {
+                log(`Failed to toggle ${key}`, "error");
+                // Revert UI if needed (complex without state mgmt, but acceptable for admin dash)
+                loadFeatures();
+            }
+        }
+
+        async function updateTheme() {
+            const primary = document.getElementById('primaryColorHex').value;
+            const secondary = document.getElementById('secondaryColorHex').value;
+            try {
+                await fetch('/api/theme/update', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ primary_color: primary, secondary_color: secondary })
+                });
+                log("Theme Updated", "success");
+            } catch (e) { log("Theme Update Failed", "error"); }
+        }
+
+        async function resetTheme() {
+            try {
+                await fetch('/api/theme/reset', { method: 'POST' });
+                log("Theme Reset", "success");
+            } catch (e) { log("Reset Failed", "error"); }
+        }
+
+        // --- System Logs ---
+        function log(msg, type = 'info') {
+            const logs = document.getElementById('logs');
+            const time = new Date().toLocaleTimeString();
+            const colorClass = type === 'success' ? 'log-success' : (type === 'error' ? 'log-error' : '');
+            logs.innerHTML = `<div class="log-entry ${colorClass}"><span class="log-time">${time}</span> ${msg}</div>` + logs.innerHTML;
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            loadStats();
+            loadFeatures();
+            setInterval(loadStats, 30000);
+
+            // Bind color inputs
+            document.getElementById('primaryColor').addEventListener('input', (e) => document.getElementById('primaryColorHex').value = e.target.value);
+            document.getElementById('secondaryColor').addEventListener('input', (e) => document.getElementById('secondaryColorHex').value = e.target.value);
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+# Don't upload these to Vercel
+serviceAccountKey.json
+*.pyc
+__pycache__/
+.env
+.env.local
+*.log
+.DS_Store
+node_modules/
+
+# Keep local files only
+notification_web_server.py
+send_notification_admin.py
+send_notification_admin.js
+send_notification.py
+send_notification.js
+start_server.bat
+mobile_notification_guide.html
+notification_sender_admin.html
+notification_web_app.html
+*.md

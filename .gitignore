@@ -1,0 +1,54 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+/app/release/
+/app/full/release/
+/app/foss/release/
+*.apk
+*.aab
+crowdin.yml
+# Kotlin 2.0
+.kotlin/
+.idea
+/simpmusic.jks
+/ffmpeg-kit/build/
+
+# Sentry Config File
+sentry.properties
+/.claude/
+
+# Keystore files - NEVER commit these!
+*.jks
+*.keystore
+VxMusic.jks
+
+# Firebase config - contains sensitive API keys
+google-services.json
+app/google-services.json
+
+# Signing properties
+keystore.properties
+signing.properties
+
+# Firebase/Google Cloud credentials - NEVER commit these!
+serviceAccountKey.json
+scripts/serviceAccountKey.json
+**/serviceAccountKey.json
+
+# Web Projects
+node_modules/
+.next/
+out/
+.env.local

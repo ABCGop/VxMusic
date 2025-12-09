@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ============================================ -->
+    <!-- VxMusic Design System - Color Resources -->
+    <!-- Modern Dark Theme with Neon Purple/Blue -->
+    <!-- ============================================ -->
+    
+    <!-- PRIMARY BRAND COLORS -->
+    <color name="brand_purple">#8B5CF6</color>
+    <color name="brand_blue">#3B82F6</color>
+    <color name="brand_cyan">#06B6D4</color>
+    <color name="brand_pink">#EC4899</color>
+    
+    <!-- NEON GRADIENT COLORS -->
+    <color name="neon_purple">#9333EA</color>
+    <color name="neon_blue">#3B82F6</color>
+    <color name="neon_pink">#EC4899</color>
+    <color name="neon_cyan">#06B6D4</color>
+    
+    <!-- GRADIENT START/END PAIRS -->
+    <color name="gradient_purple_start">#7C3AED</color>
+    <color name="gradient_purple_end">#2563EB</color>
+    <color name="gradient_blue_start">#2563EB</color>
+    <color name="gradient_blue_end">#06B6D4</color>
+    <color name="gradient_pink_start">#EC4899</color>
+    <color name="gradient_pink_end">#8B5CF6</color>
+    
+    <!-- BACKGROUND COLORS -->
+    <color name="background_primary">#0A0A0F</color>
+    <color name="background_secondary">#0F0F14</color>
+    <color name="background_tertiary">#1A1A24</color>
+    
+    <!-- SURFACE COLORS -->
+    <color name="surface_primary">#0F0F14</color>
+    <color name="surface_elevated">#1A1A24</color>
+    <color name="surface_card">#1A1A24</color>
+    <color name="surface_card_hover">#242433</color>
+    
+    <!-- GLASS MORPHISM COLORS -->
+    <color name="glass_background">#1AFFFFFF</color>
+    <color name="glass_border">#33FFFFFF</color>
+    <color name="glass_highlight">#0DFFFFFF</color>
+    <color name="glass_surface">#26FFFFFF</color>
+    
+    <!-- OVERLAY COLORS -->
+    <color name="overlay_light">#26000000</color>
+    <color name="overlay_medium">#4D000000</color>
+    <color name="overlay_heavy">#80000000</color>
+    <color name="overlay_ultra">#B3000000</color>
+    
+    <!-- SHIMMER EFFECT COLORS -->
+    <color name="shimmer_background">#1A8B5CF6</color>
+    <color name="shimmer_line">#8B5CF6</color>
+    <color name="shimmer_highlight">#33A78BFA</color>
+    
+    <!-- CARD COLORS -->
+    <color name="card_background">#1A1A24</color>
+    <color name="card_elevated">#242433</color>
+    <color name="card_shadow_1">#80000000</color>
+    <color name="card_shadow_2">#40000000</color>
+    <color name="card_border">#374151</color>
+    
+    <!-- BUTTON COLORS -->
+    <color name="button_primary">#8B5CF6</color>
+    <color name="button_secondary">#3B82F6</color>
+    <color name="button_disabled">#374151</color>
+    <color name="button_hover">#7C3AED</color>
+    
+    <!-- TEXT COLORS -->
+    <color name="text_primary">#F9FAFB</color>
+    <color name="text_secondary">#D1D5DB</color>
+    <color name="text_tertiary">#9CA3AF</color>
+    <color name="text_disabled">#6B7280</color>
+    
+    <!-- ICON COLORS -->
+    <color name="icon_primary">#F9FAFB</color>
+    <color name="icon_secondary">#9CA3AF</color>
+    <color name="icon_accent">#8B5CF6</color>
+    <color name="icon_active">#8B5CF6</color>
+    
+    <!-- STATUS COLORS -->
+    <color name="status_success">#10B981</color>
+    <color name="status_warning">#F59E0B</color>
+    <color name="status_error">#F87171</color>
+    <color name="status_info">#3B82F6</color>
+    
+    <!-- MUSIC PLAYER SPECIFIC -->
+    <color name="player_background">#0F0F14</color>
+    <color name="player_control">#8B5CF6</color>
+    <color name="waveform_color">#8B5CF6</color>
+    <color name="waveform_background">#1F2937</color>
+    <color name="progress_bar_fill">#8B5CF6</color>
+    <color name="progress_bar_background">#374151</color>
+    <color name="seek_bar_thumb">#FFFFFF</color>
+    
+    <!-- BOTTOM BAR COLORS -->
+    <color name="bottom_bar_background">#99000000</color>
+    <color name="bottom_bar_active">#8B5CF6</color>
+    <color name="bottom_bar_inactive">#6B7280</color>
+    
+    <!-- OUTLINE & DIVIDER COLORS -->
+    <color name="outline_primary">#4B5563</color>
+    <color name="outline_secondary">#374151</color>
+    <color name="divider">#1F2937</color>
+    
+    <!-- UTILITY COLORS -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- LEGACY SUPPORT (backward compatibility) -->
+    <color name="gradient_start">#7C3AED</color>
+    <color name="gradient_end">#2563EB</color>
+</resources>

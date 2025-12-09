@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ============================================ -->
+    <!-- VxMusic Design System - Spacing & Dimensions -->
+    <!-- Modern 8dp grid system -->
+    <!-- ============================================ -->
+    
+    <!-- SPACING SCALE - Based on 8dp grid -->
+    <dimen name="spacing_xxxs">2dp</dimen>
+    <dimen name="spacing_xxs">4dp</dimen>
+    <dimen name="spacing_xs">8dp</dimen>
+    <dimen name="spacing_sm">12dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">40dp</dimen>
+    <dimen name="spacing_xxxl">48dp</dimen>
+    <dimen name="spacing_huge">64dp</dimen>
+    
+    <!-- PADDING - Component internal spacing -->
+    <dimen name="padding_tiny">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">32dp</dimen>
+    
+    <!-- MARGIN - Component external spacing -->
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+    
+    <!-- SCREEN MARGINS -->
+    <dimen name="screen_margin_horizontal">20dp</dimen>
+    <dimen name="screen_margin_vertical">16dp</dimen>
+    <dimen name="screen_padding">20dp</dimen>
+    
+    <!-- BORDER RADIUS - Rounded corners -->
+    <dimen name="radius_xs">4dp</dimen>
+    <dimen name="radius_sm">8dp</dimen>
+    <dimen name="radius_md">12dp</dimen>
+    <dimen name="radius_lg">16dp</dimen>
+    <dimen name="radius_xl">20dp</dimen>
+    <dimen name="radius_xxl">24dp</dimen>
+    <dimen name="radius_full">9999dp</dimen>
+    
+    <!-- CARD DIMENSIONS -->
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_margin">12dp</dimen>
+    
+    <!-- ALBUM/SONG ARTWORK SIZES -->
+    <dimen name="artwork_small">48dp</dimen>
+    <dimen name="artwork_medium">80dp</dimen>
+    <dimen name="artwork_large">120dp</dimen>
+    <dimen name="artwork_xlarge">200dp</dimen>
+    <dimen name="artwork_hero">300dp</dimen>
+    <dimen name="artwork_player">280dp</dimen>
+    
+    <!-- ICON SIZES -->
+    <dimen name="icon_tiny">16dp</dimen>
+    <dimen name="icon_small">20dp</dimen>
+    <dimen name="icon_medium">24dp</dimen>
+    <dimen name="icon_large">32dp</dimen>
+    <dimen name="icon_xlarge">40dp</dimen>
+    <dimen name="icon_huge">48dp</dimen>
+    
+    <!-- BUTTON DIMENSIONS -->
+    <dimen name="button_height_small">32dp</dimen>
+    <dimen name="button_height_medium">40dp</dimen>
+    <dimen name="button_height_large">48dp</dimen>
+    <dimen name="button_height_xlarge">56dp</dimen>
+    <dimen name="button_corner_radius">24dp</dimen>
+    <dimen name="button_padding_horizontal">24dp</dimen>
+    <dimen name="button_padding_vertical">12dp</dimen>
+    <dimen name="button_icon_size">20dp</dimen>
+    
+    <!-- CHIP/TAG DIMENSIONS -->
+    <dimen name="chip_height">32dp</dimen>
+    <dimen name="chip_corner_radius">16dp</dimen>
+    <dimen name="chip_padding_horizontal">16dp</dimen>
+    <dimen name="chip_spacing">8dp</dimen>
+    
+    <!-- INPUT FIELD DIMENSIONS -->
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="input_corner_radius">12dp</dimen>
+    <dimen name="input_padding_horizontal">16dp</dimen>
+    <dimen name="input_icon_size">24dp</dimen>
+    
+    <!-- BOTTOM NAVIGATION BAR -->
+    <dimen name="bottom_nav_height">80dp</dimen>
+    <dimen name="bottom_nav_icon_size">24dp</dimen>
+    <dimen name="bottom_nav_elevation">16dp</dimen>
+    
+    <!-- TOP APP BAR -->
+    <dimen name="app_bar_height">56dp</dimen>
+    <dimen name="app_bar_elevation">4dp</dimen>
+    
+    <!-- MUSIC PLAYER CONTROLS -->
+    <dimen name="player_control_button_size">56dp</dimen>
+    <dimen name="player_control_button_large">72dp</dimen>
+    <dimen name="player_control_icon">28dp</dimen>
+    <dimen name="player_control_icon_large">36dp</dimen>
+    <dimen name="player_progress_height">4dp</dimen>
+    <dimen name="player_thumb_size">16dp</dimen>
+    
+    <!-- WAVEFORM DIMENSIONS -->
+    <dimen name="waveform_height">64dp</dimen>
+    <dimen name="waveform_bar_width">3dp</dimen>
+    <dimen name="waveform_bar_spacing">2dp</dimen>
+    
+    <!-- LIST ITEM DIMENSIONS -->
+    <dimen name="list_item_height_small">56dp</dimen>
+    <dimen name="list_item_height_medium">72dp</dimen>
+    <dimen name="list_item_height_large">88dp</dimen>
+    <dimen name="list_item_padding">16dp</dimen>
+    
+    <!-- DIVIDER & SEPARATOR -->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="divider_thick">2dp</dimen>
+    
+    <!-- ELEVATION/SHADOW LEVELS -->
+    <dimen name="elevation_none">0dp</dimen>
+    <dimen name="elevation_low">2dp</dimen>
+    <dimen name="elevation_medium">4dp</dimen>
+    <dimen name="elevation_high">8dp</dimen>
+    <dimen name="elevation_ultra">16dp</dimen>
+    
+    <!-- BORDER WIDTHS -->
+    <dimen name="border_thin">1dp</dimen>
+    <dimen name="border_medium">2dp</dimen>
+    <dimen name="border_thick">3dp</dimen>
+    
+    <!-- MODAL/DIALOG DIMENSIONS -->
+    <dimen name="dialog_corner_radius">20dp</dimen>
+    <dimen name="dialog_padding">24dp</dimen>
+    <dimen name="dialog_margin">32dp</dimen>
+    
+    <!-- BOTTOM SHEET DIMENSIONS -->
+    <dimen name="bottom_sheet_corner_radius">24dp</dimen>
+    <dimen name="bottom_sheet_peek_height">80dp</dimen>
+    <dimen name="bottom_sheet_drag_handle_width">40dp</dimen>
+    <dimen name="bottom_sheet_drag_handle_height">4dp</dimen>
+    
+    <!-- PLAYLIST/GRID ITEM DIMENSIONS -->
+    <dimen name="grid_item_small">100dp</dimen>
+    <dimen name="grid_item_medium">140dp</dimen>
+    <dimen name="grid_item_large">180dp</dimen>
+    <dimen name="grid_spacing">12dp</dimen>
+    
+    <!-- SEARCH BAR DIMENSIONS -->
+    <dimen name="search_bar_height">48dp</dimen>
+    <dimen name="search_bar_corner_radius">24dp</dimen>
+    
+    <!-- TAB BAR DIMENSIONS -->
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="tab_indicator_height">3dp</dimen>
+    
+    <!-- BANNER/HERO SECTION -->
+    <dimen name="banner_height">200dp</dimen>
+    <dimen name="hero_section_height">300dp</dimen>
+    
+    <!-- SHIMMER/SKELETON LOADING -->
+    <dimen name="shimmer_corner_radius">8dp</dimen>
+    
+    <!-- APP WIDGET -->
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="widget_corner_radius">16dp</dimen>
+    <dimen name="widget_padding">16dp</dimen>
+</resources>

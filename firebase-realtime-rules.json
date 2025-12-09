@@ -1,0 +1,55 @@
+{
+  "rules": {
+    "messages": {
+      "$chatId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "$messageId": {
+          ".validate": "newData.hasChildren(['id', 'chatId', 'senderId', 'receiverId', 'content', 'type', 'status', 'timestamp'])",
+          "id": {
+            ".validate": "newData.isString()"
+          },
+          "chatId": {
+            ".validate": "newData.isString() && newData.val() == $chatId"
+          },
+          "senderId": {
+            ".validate": "newData.isString() && newData.val() == auth.uid"
+          },
+          "receiverId": {
+            ".validate": "newData.isString()"
+          },
+          "content": {
+            ".validate": "newData.isString()"
+          },
+          "type": {
+            ".validate": "newData.isString() && (newData.val() == 'text' || newData.val() == 'image' || newData.val() == 'audio')"
+          },
+          "mediaUrl": {
+            ".validate": "newData.isString()"
+          },
+          "status": {
+            ".validate": "newData.isString() && (newData.val() == 'sent' || newData.val() == 'delivered' || newData.val() == 'read')"
+          },
+          "timestamp": {
+            ".validate": "newData.isNumber()"
+          }
+        }
+      }
+    },
+    "chats": {
+      "$chatId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "lastMessage": {
+          ".validate": "newData.isString()"
+        },
+        "lastMessageTime": {
+          ".validate": "newData.isNumber()"
+        },
+        "lastMessageType": {
+          ".validate": "newData.isString()"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="appearance">Appearance</string>
+    <string name="app_theme">App Theme</string>
+    <string name="customize_app_colors">Customize your app colors</string>
+    <string name="app_icon">App Icon</string>
+    <string name="change_app_icon">Change the app icon</string>
+    <string name="support_vxmusic">Support VxMusic ❤️</string>
+    <string name="become_pro_member">Become a Pro member</string>
+    <string name="pro_feature_locked">Pro Feature Locked</string>
+    <string name="subscribe_to_use">You must subscribe to VxMusic Pro to use premium themes and app icons.</string>
+    <string name="go_pro">Go Pro</string>
+    <string name="unlock_pro">Unlock Pro</string>
+    <string name="maybe_later">Maybe Later</string>
+    <string name="not_now">Not Now</string>
+    <string name="support_message">Help us keep building awesome music features by becoming a Pro member.</string>
+    <string name="become_pro_message">Pro users get exclusive themes, app icons, and priority access.</string>
+</resources>

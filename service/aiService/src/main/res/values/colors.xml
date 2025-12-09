@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="card_shadow_1">#0D000000</color>
+    <color name="card_shadow_2">#1A000000</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_elevated">#FFFFFF</color>
+    <color name="glass_border">#33FFFFFF</color>
+    <color name="glass_surface">#1AFFFFFF</color>
+    <color name="gradient_start">#7C3AED</color>
+    <color name="gradient_end">#DB2777</color>
+</resources>

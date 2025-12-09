@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Shriyanshi 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6A0572;
+            --secondary: #AB83A1;
+            --accent: #FFD1DC;
+            --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.5);
+            --text-main: #2D2D2D;
+            --text-light: #666666;
+            --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffeef8;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+            background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+            min-height: 100vh;
+            color: var(--text-main);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .bg-blobs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+        }
+
+        .blob {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: floatBlob 20s infinite alternate;
+        }
+
+        .blob:nth-child(1) {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+            background: #a18cd1;
+        }
+
+        .blob:nth-child(2) {
+            width: 300px;
+            height: 300px;
+            top: 40%;
+            right: -50px;
+            background: #fbc2eb;
+            animation-delay: -5s;
+        }
+
+        .blob:nth-child(3) {
+            width: 350px;
+            height: 350px;
+            bottom: -50px;
+            left: 20%;
+            background: #8fd3f4;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatBlob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary);
+        }
+
+        .script-font {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #6A0572, #FF6B6B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            color: #555;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            animation: bounce 2s infinite;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .memory-card {
+            padding: 20px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .memory-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Reasons */
+        .reasons-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reason-card {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: all 0.6s ease-out;
+        }
+
+        .reason-card.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .reason-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: rgba(106, 5, 114, 0.2);
+        }
+
+        /* Compliments */
+        .compliment-box {
+            text-align: center;
+            padding: 60px;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #6A0572, #9A4D9E);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(106, 5, 114, 0.3);
+            margin-top: 30px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(106, 5, 114, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .compliment-display {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary);
+            margin-top: 30px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+
+        .compliment-display.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.8) translateY(50px);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: center;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-blobs">
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+    </div>
+    <canvas id="particle-canvas"></canvas>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">For Shriyanshi 💖</h1>
+        <p class="hero-subtitle script-font">You mean more than words can say...</p>
+        <div class="scroll-indicator"
+            onclick="document.getElementById('memories').scrollIntoView({behavior: 'smooth'})">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#6A0572" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section id="memories">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Our Beautiful Memories</h2>
+            <div class="gallery-grid">
+                <div class="glass memory-card">
+                    <span class="memory-icon">🎭</span>
+                    <h3>Laughter & Joy</h3>
+                    <p style="margin-top: 10px; color: var(--text-light);">The day we laughed till we cried. Your laugh
+                        is my favorite melody.</p>
+                </div>
+                <div class="glass memory-card">
+                    <span class="memory-icon">🤪</span>
+                    <h3>Inside Jokes</h3>
+                    <p style="margin-top: 10px; color: var(--text-light);">Our weird jokes that only we understand. A
+                        world of our own.</p>
+                </div>
+                <div class="glass memory-card">
+                    <span class="memory-icon">🌟</span>
+                    <h3>Late Nights</h3>
+                    <p style="margin-top: 10px; color: var(--text-light);">Solving life's mysteries when the world is
+                        asleep.</p>
+                </div>
+                <div class="glass memory-card">
+                    <span class="memory-icon">💫</span>
+                    <h3>Just Us</h3>
+                    <p style="margin-top: 10px; color: var(--text-light);">No filters, just pure comfort and genuine
+                        connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section id="reasons">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Why You're Special</h2>
+            <div class="reasons-list">
+                <div class="glass reason-card">
+                    <div class="reason-number">01</div>
+                    <p class="script-font" style="font-size: 1.4rem;">You listen with your heart, not just your ears.
+                    </p>
+                </div>
+                <div class="glass reason-card">
+                    <div class="reason-number">02</div>
+                    <p class="script-font" style="font-size: 1.4rem;">Your authenticity is a breath of fresh air.</p>
+                </div>
+                <div class="glass reason-card">
+                    <div class="reason-number">03</div>
+                    <p class="script-font" style="font-size: 1.4rem;">You understand my silence better than others
+                        understand my words.</p>
+                </div>
+                <div class="glass reason-card">
+                    <div class="reason-number">04</div>
+                    <p class="script-font" style="font-size: 1.4rem;">Your kindness ripples out and touches everyone
+                        around you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliments Section -->
+    <section>
+        <div class="container">
+            <div class="glass compliment-box">
+                <h2>Need a Smile?</h2>
+                <p style="margin-top: 10px;">I've saved some smiles for you here.</p>
+                <div class="compliment-display" id="complimentText"></div>
+                <button class="btn-primary" onclick="generateCompliment()">Click for Magic ✨</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surprise Section -->
+    <section style="text-align: center; padding-bottom: 100px;">
+        <button class="btn-primary" onclick="openModal()" style="background: linear-gradient(45deg, #FF6B6B, #FF8E53);">
+            Open Special Message 💌
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 40px; color: var(--primary);">
+        <p class="script-font" style="font-size: 1.2rem;">Made with ❤️ by Vishesh</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 style="margin-bottom: 20px;">From My Heart</h2>
+            <div style="text-align: left; line-height: 1.6; color: #444;">
+                <p style="margin-bottom: 15px;"><strong>Hey Shriyanshi,</strong></p>
+                <p style="margin-bottom: 15px;">Thank you for coming into my life. You make every day better. I wanted
+                    to tell you the truth I like you very much.💖</p>
+                <p class="script-font" style="font-size: 1.5rem; text-align: right; color: var(--primary);">Always here
+                    for you,<br>Vishesh</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Particle System ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.color = `rgba(255, 182, 193, ${Math.random() * 0.5})`;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.01;
+                if (this.size <= 0.2) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3 + 1;
+                }
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        initParticles();
+        animateParticles();
+
+        // --- Intersection Observer for Animations ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reason-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // --- Compliment Generator ---
+        const compliments = [
+            "You light up every room you enter.",
+            "Your kindness is a gift to the world.",
+            "You have the most contagious laugh.",
+            "Being around you makes everything better.",
+            "You are stronger than you know.",
+            "Your perspective is refreshing and beautiful.",
+            "You are a masterpiece.",
+            "The world needs more people like you."
+        ];
+
+        function generateCompliment() {
+            const display = document.getElementById('complimentText');
+            display.classList.remove('show');
+
+            // Confetti effect (simple version)
+            createConfetti(document.querySelector('.btn-primary').getBoundingClientRect());
+
+            setTimeout(() => {
+                const random = compliments[Math.floor(Math.random() * compliments.length)];
+                display.textContent = random;
+                display.classList.add('show');
+            }, 300);
+        }
+
+        function createConfetti(rect) {
+            for (let i = 0; i < 20; i++) {
+                const p = new Particle();
+                p.x = rect.left + rect.width / 2;
+                p.y = rect.top;
+                p.speedY = -Math.random() * 3;
+                p.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+                particles.push(p);
+            }
+        }
+
+        // --- Modal Logic ---
+        function openModal() {
+            document.getElementById('modal').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{
+    "name": "vxmusic-website",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "clsx": "^2.1.0",
+        "framer-motion": "^11.0.8",
+        "lucide-react": "^0.344.0",
+        "next": "14.1.0",
+        "react": "^18",
+        "react-dom": "^18",
+        "tailwind-merge": "^2.2.1",
+        "three": "^0.162.0",
+        "@studio-freight/react-lenis": "^0.0.46",
+        "@react-three/fiber": "^8.15.16",
+        "@react-three/drei": "^9.102.6"
+    },
+    "devDependencies": {
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "@types/three": "^0.162.0",
+        "autoprefixer": "^10.0.1",
+        "postcss": "^8",
+        "tailwindcss": "^3.3.0",
+        "typescript": "^5"
+    }
+}
