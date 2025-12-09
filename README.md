@@ -121,7 +121,7 @@ This repository does **NOT** include:
 
 - **Android Phones**: ✅ Fully supported
 - **Android Tablets**: ✅ Adaptive UI with tablet layout
-- **Chromebooks**: ✅ Full support with keyboard shortcuts ([Learn more](CHROMEBOOK_SUPPORT.md))
+- **Chromebooks**: ✅ Full support with keyboard shortcuts
 - **Android Auto**: ✅ Media controls while driving
 - **Android TV**: 🚧 Coming soon
 
