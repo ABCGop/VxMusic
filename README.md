@@ -36,8 +36,6 @@ VxMusic is a feature-rich music streaming application for Android that provides 
 - 📊 **Activity Logs** - Track all admin actions with timestamps
 - 🌐 **Web Admin Panel** - Beautiful web interface to control everything
 
-👉 **[Quick Start Guide](QUICK_START_ADMIN.md)** | **[Full Documentation](ADMIN_CONTROL_SYSTEM.md)**
-
 ## 🛠️ Tech Stack
 
 - **Language**: Kotlin 2.2.20
@@ -113,8 +111,6 @@ This repository does **NOT** include:
 - Firebase configuration (`google-services.json`)
 - Google Cloud credentials
 
-For detailed setup instructions, see [SECURITY_SETUP.md](SECURITY_SETUP.md) (if available).
-
 ## 📋 Requirements
 
 - **Minimum SDK**: Android 8.0 (API 26)
@@ -175,25 +171,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📞 Support
 
 - **Issues**: [GitHub Issues](https://github.com/ABCGop/VxMusic/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/ABCGop/VxMusic/discussions)
+- **Email**: [opabcg@gmail.com](mailto:opabcg@gmail.com)
 
 ## 🌟 Star History
 
 If you like this project, please consider giving it a ⭐ on GitHub!
-
-## 📸 Screenshots
-
-_Coming soon..._
-
-## 🔮 Roadmap
-
-- [ ] Customizable themes
-- [ ] Playlist import/export
-- [ ] Spotify integration
-- [ ] Local file support
-- [ ] Equalizer
-- [ ] Sleep timer enhancements
-- [ ] Widget support
 
 ## ⚠️ Disclaimer
 
