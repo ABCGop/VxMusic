@@ -1,188 +1,121 @@
-# VxMusic 🎵
+# VxMusic
 
-A modern Android music streaming app built with Jetpack Compose and Material 3 design.
+A FOSS YouTube Music client for Android and Desktop with many features from Spotify, SponsorBlock, ReturnYouTubeDislike using Compose Multiplatform.
 
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
 [![Kotlin](https://img.shields.io/badge/Language-Kotlin-blue.svg)](https://kotlinlang.org/)
 [![Min SDK](https://img.shields.io/badge/Min%20SDK-26-orange.svg)](https://developer.android.com/about/versions/oreo)
-[![Target SDK](https://img.shields.io/badge/Target%20SDK-36-brightgreen.svg)](https://developer.android.com/about/versions)
 
-## 📱 About
+## About
 
-VxMusic is a feature-rich music streaming application for Android that provides seamless access to YouTube Music content. Built with modern Android development practices, it offers a beautiful Material 3 interface and powerful features for music lovers.
+VxMusic is a feature-rich music streaming application for Android and Desktop that provides seamless access to YouTube Music content. Built with Compose Multiplatform, it offers a beautiful Material 3 interface and powerful features for music lovers.
 
-## ✨ Features
+**Based on [SimpMusic](https://github.com/maxrave-dev/SimpMusic)** by [maxrave-dev](https://github.com/maxrave-dev).
 
-### Core Features
-- 🎨 **Modern UI** - Beautiful Material 3 design with Jetpack Compose
-- 🎵 **YouTube Music** - Stream millions of songs
-- 💻 **Chromebook Compatible** - Full support with keyboard shortcuts and resizable windows
-- 📱 **16 KB Page Size Support** - Optimized for Android 15+ devices
-- 🔔 **Push Notifications** - Stay updated with Firebase Cloud Messaging
-- 🔄 **In-App Updates** - Seamless updates via Google Play
-- 📥 **Download Manager** - Save music for offline playback
-- 🎧 **Advanced Playback** - Lyrics, queue management, and more
-- 🌓 **Dark Mode** - Eye-friendly dark theme support
-- 🔍 **Smart Search** - Find songs, artists, albums, and playlists
-- 📊 **Charts & Trending** - Discover what's hot
+## Features
 
-### 🔥 NEW: Admin Control System
-- 🛡️ **Remote User Management** - Block/unblock users without app updates
-- 📢 **Push Notifications** - Send in-app notifications to all users or specific users
-- 💬 **In-App Popups** - Show info, warnings, updates, or promos instantly
-- 🎨 **Dynamic Theme Control** - Change app colors remotely (no update needed!)
-- ⚙️ **Feature Toggles** - Enable/disable features on-the-fly
-- 🎮 **Remote Music Control** - Control playback from any device via web interface
-- 📊 **Activity Logs** - Track all admin actions with timestamps
-- 🌐 **Web Admin Panel** - Beautiful web interface to control everything
+- Play music from YouTube Music or YouTube for free, without ads and in the background
+- High quality up-to 256kbps stream for YouTube Music Premium users
+- Browsing Home, Charts, Podcast, Moods & Genre with YouTube Music data at high speed
+- Search everything on YouTube
+- Analyze your playing data, create custom playlists, and sync with YouTube Music
+- Spotify Canvas supported
+- Play 1080p video option with subtitle
+- AI song suggestions
+- Customize your playlist, synced with YouTube Music
+- Notifications from followed artists
+- Caching and offline playback support
+- Crossfade with DJ-style like Apple Music
+- Synced lyrics from multiple providers, LRCLIB, Spotify and YouTube Transcript - AI lyrics translation (BETA)
+- Personalize data and multi-YouTube-account support
+- Local "scrobble" like Last.fm
+- Supports SponsorBlock and Return YouTube Dislike
+- Sleep Timer
+- Android Auto with online content
+- Discord Rich Presence support
+- Desktop support (Windows, macOS, Linux)
+- And many more!
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Language**: Kotlin 2.2.20
-- **UI Framework**: Jetpack Compose
-- **Architecture**: MVVM with Clean Architecture
+- **Language**: Kotlin
+- **UI Framework**: Compose Multiplatform (Jetpack Compose)
+- **Architecture**: Clean Architecture + MVVM
 - **Dependency Injection**: Koin
-- **Networking**: Retrofit, OkHttp
-- **Media Playback**: ExoPlayer (Media3)
+- **Networking**: Ktor Client
+- **Media Playback**: Media3 (ExoPlayer) for Android, VLCJ for Desktop
 - **Database**: Room
 - **Async**: Coroutines & Flow
-- **Firebase**: Cloud Messaging, Analytics
+- **Build System**: Gradle (Kotlin DSL)
 
-## 📦 Build Variants
+## Module Structure
 
-VxMusic comes in two flavors:
+- **androidApp/**: Android-specific entry point
+- **composeApp/**: Shared Compose Multiplatform module (Android, Desktop, iOS)
+- **core/**: Core modules (common, data, domain, media, service)
+- **crashlytics/**: Crash reporting (Full version with Sentry)
+- **crashlytics-empty/**: FOSS version without tracking
 
-### Full Flavor
-- Google Play Services integration
-- Firebase Cloud Messaging for push notifications
-- In-App Updates via Google Play
-- Firebase Analytics
+## Build Variants
 
-### FOSS Flavor
-- Completely open source
-- No proprietary dependencies
-- No Google Play Services required
-- Perfect for F-Droid and privacy-focused users
+### Android
+- **Full**: With Sentry crash reporting
+- **FOSS**: No tracking, no proprietary dependencies
 
-## 🚀 Getting Started
+### Desktop
+- **Windows**: `.msi` installer
+- **macOS**: `.dmg` (ARM and x86-64)
+- **Linux**: `.AppImage`
+
+## Building from Source
 
 ### Prerequisites
 
-- Android Studio Ladybug or later
+- Android Studio or IntelliJ IDEA
 - JDK 21
-- Android SDK 36
-- Gradle 8.14.3
+- Android SDK 37
 
-### Building from Source
+### Build
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ABCGop/VxMusic.git
-   cd VxMusic
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/ABCGop/VxMusic.git
+cd VxMusic
 
-2. **Configure signing (for release builds)**
-   ```bash
-   cp keystore.properties.template keystore.properties
-   # Edit keystore.properties with your keystore details
-   ```
+# Debug build (Android)
+./gradlew assembleFullDebug
 
-3. **Add Firebase configuration (for full flavor)**
-   - Download `google-services.json` from Firebase Console
-   - Place it in the `app/` directory
+# Release build (Android)
+./gradlew assembleFullRelease
 
-4. **Build the app**
-   ```bash
-   # Debug build
-   ./gradlew assembleFullDebug
-   
-   # Release build
-   ./gradlew assembleFullRelease
-   
-   # FOSS build
-   ./gradlew assembleFossRelease
-   ```
+# FOSS build (Android)
+./gradlew assembleFossRelease
 
-## 🔐 Security
+# Desktop
+./gradlew :composeApp:run
+```
 
-This repository does **NOT** include:
-- Keystore files (`.jks`)
-- Keystore passwords (`keystore.properties`)
-- Firebase configuration (`google-services.json`)
-- Google Cloud credentials
-
-## 📋 Requirements
+## Requirements
 
 - **Minimum SDK**: Android 8.0 (API 26)
 - **Target SDK**: Android 15 (API 36)
-- **Compile SDK**: Android 15 (API 36)
+- **Compile SDK**: Android 16 (API 37)
 
-## 💻 Platform Support
+## Acknowledgments
 
-- **Android Phones**: ✅ Fully supported
-- **Android Tablets**: ✅ Adaptive UI with tablet layout
-- **Chromebooks**: ✅ Full support with keyboard shortcuts
-- **Android Auto**: ✅ Media controls while driving
-- **Android TV**: 🚧 Coming soon
-
-## 🙏 Acknowledgments
-
-### Based on SimpMusic
-
-VxMusic is built upon the excellent work of the [SimpMusic](https://github.com/maxrave-dev/SimpMusic) project by [maxrave-dev](https://github.com/maxrave-dev). We are grateful for their outstanding open-source contribution that made this project possible.
-
-**Original Project**: [SimpMusic](https://github.com/maxrave-dev/SimpMusic)
-
-Key components inherited from SimpMusic:
-- YouTube Music scraper and API integration
-- Core media playback architecture
-- Database schema and repository patterns
-- Base UI components and navigation structure
+VxMusic is built upon the excellent [SimpMusic](https://github.com/maxrave-dev/SimpMusic) project by [maxrave-dev](https://github.com/maxrave-dev). We are grateful for their outstanding open-source contribution.
 
 ### Other Credits
 
-- **ExoPlayer** - Media playback by Google
+- **Media3 (ExoPlayer)** - Media playback by Google
 - **Jetpack Compose** - Modern UI toolkit by Google
-- **Coil** - Image loading library
-- **Material 3** - Design system by Google
-- **Koin** - Dependency injection framework
+- **VLCJ** - Desktop audio playback
+- **Ktor** - HTTP client
+- **Koin** - Dependency injection
+- **SponsorBlock** - Skip sponsors
+- **ReturnYouTubeDislike** - Vote information
+- **LRCLIB** - Lyrics provider
 
-## 📜 License
+## License
 
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-
-This means:
-- ✅ You can use this code freely
-- ✅ You can modify and distribute it
-- ✅ You must disclose source code
-- ✅ You must license derivative works under GPL v3
-- ✅ You must state changes made to the code
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/ABCGop/VxMusic/issues)
-- **Email**: [opabcg@gmail.com](mailto:opabcg@gmail.com)
-
-## 🌟 Star History
-
-If you like this project, please consider giving it a ⭐ on GitHub!
-
-## ⚠️ Disclaimer
-
-This app is for educational purposes only. VxMusic does not host or store any music files. It streams content from publicly available sources. Please respect copyright laws and support artists by purchasing their music.
-
----
-
-**Made with ❤️ by Vishesh Gangwar**
-
-**Built on the foundation of [SimpMusic](https://github.com/maxrave-dev/SimpMusic)**
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.

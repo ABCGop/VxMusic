@@ -1,2 +1,0 @@
-gradlew bundleFullRelease --no-parallel --max-workers=1
-gradlew assembleFullRelease --no-parallel --max-workers=1
