@@ -1,0 +1,35 @@
+package com.maxrave.domain.data.entities
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.maxrave.domain.extension.now
+import kotlinx.datetime.LocalDateTime
+
+@Entity(tableName = "new_format")
+data class NewFormatEntity(
+    @PrimaryKey val videoId: String,
+    val itag: Int,
+    val mimeType: String?,
+    val codecs: String?,
+    val bitrate: Int?,
+    val sampleRate: Int?,
+    val contentLength: Long?,
+    val loudnessDb: Float?,
+    val lengthSeconds: Int?,
+    val playbackTrackingVideostatsPlaybackUrl: String?,
+    val playbackTrackingAtrUrl: String?,
+    val playbackTrackingVideostatsWatchtimeUrl: String?,
+    @ColumnInfo(name = "expired_time", defaultValue = "0")
+    val expiredTime: LocalDateTime = now(),
+    val cpn: String?,
+    val audioUrl: String? = null,
+    val videoUrl: String? = null,
+    // AutoMix metadata from Tidal (populated when 320kbps stream is fetched)
+    @ColumnInfo(defaultValue = "NULL")
+    val bpm: Int? = null,
+    @ColumnInfo(name = "music_key", defaultValue = "NULL")
+    val musicKey: String? = null,
+    @ColumnInfo(defaultValue = "NULL")
+    val keyScale: String? = null,
+)
