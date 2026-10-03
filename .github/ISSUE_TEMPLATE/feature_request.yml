@@ -1,40 +1,33 @@
-name: Feature request
-description: Suggest an improvement or new idea for SimpMusic
-labels: [ "feat:unconfirmed" ]
-
+name: Feature Request
+description: Suggest a new feature or improvement for VxMusic
+title: "[Feature]: "
+labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        ⚠️ **Important:**  
-        Feature requests that are incomplete or not properly filled out will be closed without further explanation.
-
+        Thank you for suggesting improvements to VxMusic.
   - type: textarea
     id: problem
     attributes:
-      label: Problem Description
-      placeholder: Describe the underlying problem or pain point.
+      label: Problem Statement / Use Case
+      description: What problem does this feature solve, or what is missing?
     validations:
       required: true
-
   - type: textarea
     id: solution
     attributes:
       label: Proposed Solution
-      placeholder: Explain the solution or feature you'd like to see implemented.
+      description: How should this feature work in the app?
     validations:
       required: true
-
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternative Solutions
-      placeholder: Describe any alternative approaches or features you've considered.
-    validations:
-      required: true
-
+      label: Considered Alternatives
+      description: Have you considered any alternative workflows or workarounds?
   - type: textarea
-    id: context
+    id: additional_context
     attributes:
       label: Additional Context
-      placeholder: Add any extra context, details, or screenshots that help clarify your request.
+      description: Mockups, screenshots, or references to similar implementations.

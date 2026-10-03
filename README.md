@@ -1,121 +1,97 @@
-# VxMusic
+<div align="center">
 
-A FOSS YouTube Music client for Android and Desktop with many features from Spotify, SponsorBlock, ReturnYouTubeDislike using Compose Multiplatform.
+<img src="vxmusic_logo.png" alt="VxMusic Logo" width="120" height="120" style="border-radius: 28px;" />
 
-[![Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
-[![Kotlin](https://img.shields.io/badge/Language-Kotlin-blue.svg)](https://kotlinlang.org/)
-[![Min SDK](https://img.shields.io/badge/Min%20SDK-26-orange.svg)](https://developer.android.com/about/versions/oreo)
+# VxMusic v4.1.0
 
-## About
+**High-Resolution Lossless Music Streaming & Player with Real-Time Synced Lyrics & Smart Discovery for Android, built with Material 3 Expressive design.**
 
-VxMusic is a feature-rich music streaming application for Android and Desktop that provides seamless access to YouTube Music content. Built with Compose Multiplatform, it offers a beautiful Material 3 interface and powerful features for music lovers.
+<p align="center">
+  <a href="https://github.com/ABCGop/VxMusic/stargazers">
+    <img src="https://img.shields.io/github/stars/ABCGop/VxMusic?style=for-the-badge&color=ffd0b0&labelColor=2d2d2d" alt="Stars" />
+  </a>
+  <a href="https://github.com/ABCGop/VxMusic/network/members">
+    <img src="https://img.shields.io/github/forks/ABCGop/VxMusic?style=for-the-badge&color=ffb4a2&labelColor=2d2d2d" alt="Forks" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/Audio-Hi--Res%20Lossless%20FLAC-00E5FF?style=for-the-badge&logo=flac&logoColor=white&labelColor=012226" alt="Hi-Res Lossless FLAC" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/Version-4.1.0-C6F100?style=for-the-badge&labelColor=012226" alt="Version 4.1.0" />
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white&labelColor=2d2d2d" alt="Platform" />
+  </a>
+</p>
 
-**Based on [SimpMusic](https://github.com/maxrave-dev/SimpMusic)** by [maxrave-dev](https://github.com/maxrave-dev).
+</div>
 
-## Features
+<br/>
 
-- Play music from YouTube Music or YouTube for free, without ads and in the background
-- High quality up-to 256kbps stream for YouTube Music Premium users
-- Browsing Home, Charts, Podcast, Moods & Genre with YouTube Music data at high speed
-- Search everything on YouTube
-- Analyze your playing data, create custom playlists, and sync with YouTube Music
-- Spotify Canvas supported
-- Play 1080p video option with subtitle
-- AI song suggestions
-- Customize your playlist, synced with YouTube Music
-- Notifications from followed artists
-- Caching and offline playback support
-- Crossfade with DJ-style like Apple Music
-- Synced lyrics from multiple providers, LRCLIB, Spotify and YouTube Transcript - AI lyrics translation (BETA)
-- Personalize data and multi-YouTube-account support
-- Local "scrobble" like Last.fm
-- Supports SponsorBlock and Return YouTube Dislike
-- Sleep Timer
-- Android Auto with online content
-- Discord Rich Presence support
-- Desktop support (Windows, macOS, Linux)
-- And many more!
+## <img src="https://api.iconify.design/lucide:sparkles.svg?color=%23C6F100" width="20" height="20" align="center" /> Overview
 
-## Tech Stack
+**VxMusic** is a native Android music streaming app engineered for audiophiles and music lovers. It delivers studio-quality **Hi-Res Lossless FLAC (up to 24-bit/192kHz)** and Opus playback, offline downloads with full embedded metadata, kinetic real-time synchronized lyrics, smart algorithmic playlist generation, and automatic scrobbling across all your devices.
 
-- **Language**: Kotlin
-- **UI Framework**: Compose Multiplatform (Jetpack Compose)
-- **Architecture**: Clean Architecture + MVVM
-- **Dependency Injection**: Koin
-- **Networking**: Ktor Client
-- **Media Playback**: Media3 (ExoPlayer) for Android, VLCJ for Desktop
-- **Database**: Room
-- **Async**: Coroutines & Flow
-- **Build System**: Gradle (Kotlin DSL)
+Designed from the ground up around **Material 3 Expressive**, VxMusic pairs an ultra-smooth visual experience with uncompromising audio fidelity.
 
-## Module Structure
+---
 
-- **androidApp/**: Android-specific entry point
-- **composeApp/**: Shared Compose Multiplatform module (Android, Desktop, iOS)
-- **core/**: Core modules (common, data, domain, media, service)
-- **crashlytics/**: Crash reporting (Full version with Sentry)
-- **crashlytics-empty/**: FOSS version without tracking
+## <img src="https://api.iconify.design/lucide:headphones.svg?color=%23C6F100" width="20" height="20" align="center" /> Lossless Audio Streaming & Backend
 
-## Build Variants
+VxMusic features a lossless streaming and download engine powered directly by the **[clashflac](https://github.com/ajisth69/clashflac)** backend:
 
-### Android
-- **Full**: With Sentry crash reporting
-- **FOSS**: No tracking, no proprietary dependencies
+- <img src="https://api.iconify.design/lucide:disc.svg?color=%2300E5FF" width="16" height="16" align="center" /> **Studio Master Quality:** Stream and download bit-perfect FLAC audio up to **24-bit / 192kHz** directly via **[clashflac](https://github.com/ajisth69/clashflac)**.
+- <img src="https://api.iconify.design/lucide:zap.svg?color=%23C6F100" width="16" height="16" align="center" /> **Opus & High-Efficiency Audio:** Seamless dual-engine fallback streaming via YouTube Music Opus for exhaustive global catalog coverage.
+- <img src="https://api.iconify.design/lucide:download.svg?color=%23C6F100" width="16" height="16" align="center" /> **Full-Fidelity Offline Downloads:** One-tap downloads saved directly to your local storage (`Music/VxMusic`), fully tagged with high-res cover art, release tags, and synchronized LRCLIB `.lrc` lyrics.
+- <img src="https://api.iconify.design/lucide:sliders.svg?color=%23C6F100" width="16" height="16" align="center" /> **Zero-Gap Playback:** Powered by AndroidX Media3 ExoPlayer with foreground audio playback and lockscreen media session controls.
 
-### Desktop
-- **Windows**: `.msi` installer
-- **macOS**: `.dmg` (ARM and x86-64)
-- **Linux**: `.AppImage`
+---
 
-## Building from Source
+## <img src="https://api.iconify.design/lucide:layers.svg?color=%23C6F100" width="20" height="20" align="center" /> Key Features
 
-### Prerequisites
+| Icon | Feature | Highlight |
+|:---:|:---|:---|
+| <img src="https://api.iconify.design/lucide:music.svg?color=%2300E5FF" width="20" height="20" /> | **Lossless Streaming** | True Hi-Res 24-bit FLAC & Opus streaming with lossless bitstream output. |
+| <img src="https://api.iconify.design/lucide:arrow-down-to-line.svg?color=%23C6F100" width="20" height="20" /> | **Offline Downloader** | Download albums, mixes, and individual songs with embedded album art and synced lyrics. |
+| <img src="https://api.iconify.design/lucide:mic.svg?color=%23FFB4A2" width="20" height="20" /> | **Real-Time Synced Lyrics** | Millisecond-accurate animated karaoke lyrics powered by LRCLIB with 8 customizable physics motion styles (Apple Fluid, Karaoke Pulse, Kinetic Slide, etc.). |
+| <img src="https://api.iconify.design/lucide:compass.svg?color=%23C6F100" width="20" height="20" /> | **Smart Discovery Engine** | Tailored recommendation feed built from your taste profile, similar seeds, loved tracks, and live charts. |
+| <img src="https://api.iconify.design/lucide:disc.svg?color=%2300E5FF" width="20" height="20" /> | **Genre DNA & Explorer** | Dynamic breakdown of your favorite genres with instant "Start Mix" and one-tap "Discover More" recommendations. |
+| <img src="https://api.iconify.design/lucide:wand-2.svg?color=%23C6F100" width="20" height="20" /> | **Taste Mixes & Playlists** | Generate unique 30–35 track mood mixes, regenerate fresh variations, manage custom playlists, and sync with YouTube Music. |
+| <img src="https://api.iconify.design/lucide:users.svg?color=%23FFB4A2" width="20" height="20" /> | **Friends & Social Feed** | Browse friends' listening habits, explore their top tracks, and play their taste profiles. |
+| <img src="https://api.iconify.design/lucide:radio.svg?color=%2300E5FF" width="20" height="20" /> | **Integrated Scrobbler** | Automatic background scrobbler watching your active media sessions across any Android music app with zero battery drain. |
+| <img src="https://api.iconify.design/lucide:palette.svg?color=%23C6F100" width="20" height="20" /> | **Material 3 Expressive** | Dynamic wallpaper colors, custom HSL color picker, dynamic album art palette, fluid morphing cards, and tactile haptics. |
 
-- Android Studio or IntelliJ IDEA
-- JDK 21
-- Android SDK 37
+---
 
-### Build
+## <img src="https://api.iconify.design/lucide:cpu.svg?color=%23C6F100" width="20" height="20" align="center" /> Tech Stack & Architecture
+
+- **Language & Framework:** 100% Kotlin + Jetpack Compose (Material 3 Expressive)
+- **Lossless Audio Backend:** **[clashflac](https://github.com/ajisth69/clashflac)** by [Ajisth (ajisth69)](https://github.com/ajisth69)
+- **Audio Engine:** AndroidX Media3 ExoPlayer + MediaSessionService
+- **Lyrics Engine:** [LRCLIB](https://lrclib.net) API
+- **Data & Intelligence:** Last.fm API, Room DB, Jetpack DataStore, Dagger Hilt
+
+---
+
+## <img src="https://api.iconify.design/lucide:rocket.svg?color=%23C6F100" width="20" height="20" align="center" /> Getting Started
+
+1. Download the latest APK from the **[Releases](https://github.com/ABCGop/VxMusic/releases)** tab.
+2. Install the release package (`VxMusic-v4.1.0-release.apk`).
+3. Connect your Last.fm account to sync your scrobbles, taste profile, and discovery feed.
+4. Start streaming in bit-perfect lossless quality.
+
+---
+
+## <img src="https://api.iconify.design/lucide:terminal.svg?color=%23C6F100" width="20" height="20" align="center" /> Building from Source
 
 ```bash
-# Clone the repository
 git clone https://github.com/ABCGop/VxMusic.git
 cd VxMusic
-
-# Debug build (Android)
-./gradlew assembleFullDebug
-
-# Release build (Android)
-./gradlew assembleFullRelease
-
-# FOSS build (Android)
-./gradlew assembleFossRelease
-
-# Desktop
-./gradlew :composeApp:run
+./gradlew assembleRelease
 ```
 
-## Requirements
+---
 
-- **Minimum SDK**: Android 8.0 (API 26)
-- **Target SDK**: Android 15 (API 36)
-- **Compile SDK**: Android 16 (API 37)
-
-## Acknowledgments
-
-VxMusic is built upon the excellent [SimpMusic](https://github.com/maxrave-dev/SimpMusic) project by [maxrave-dev](https://github.com/maxrave-dev). We are grateful for their outstanding open-source contribution.
-
-### Other Credits
-
-- **Media3 (ExoPlayer)** - Media playback by Google
-- **Jetpack Compose** - Modern UI toolkit by Google
-- **VLCJ** - Desktop audio playback
-- **Ktor** - HTTP client
-- **Koin** - Dependency injection
-- **SponsorBlock** - Skip sponsors
-- **ReturnYouTubeDislike** - Vote information
-- **LRCLIB** - Lyrics provider
-
-## License
-
-This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+<div align="center">
+  <p><b>VxMusic</b> &bull; Built with modern Android development &bull; Powered by <a href="https://github.com/ajisth69/clashflac">clashflac</a></p>
+</div>

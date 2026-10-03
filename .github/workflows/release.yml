@@ -1,0 +1,176 @@
+name: Publish Selected Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Git Tag (e.g., 4.1.0)'
+        required: true
+        default: '4.1.0'
+      release_name:
+        description: 'Release Title (e.g., VxMusic 4.1.0)'
+        required: true
+        default: 'VxMusic 4.1.0'
+      release_notes:
+        description: 'Changelog / Release Notes'
+        required: false
+        default: ''
+
+jobs:
+  release:
+    name: Build & Publish Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag_name }}
+          fetch-depth: 0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant Gradle execute permission
+        run: chmod +x gradlew
+
+      - name: Build Android 10 Release APKs (compressed + raw)
+        env:
+          LOSSLESS_BACKEND_URL: ${{ secrets.LOSSLESS_BACKEND_URL }}
+          LOSSLESS_API_KEY: ${{ secrets.LOSSLESS_API_KEY }}
+          LYRICS_API_KEY: ${{ secrets.LYRICS_API_KEY }}
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+          RELEASE_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD || secrets.RELEASE_STORE_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ secrets.ALIAS || secrets.RELEASE_KEY_ALIAS || 'release_key' }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD || secrets.RELEASE_KEY_PASSWORD }}
+        run: ./gradlew assembleRelease assembleRawRelease --stacktrace
+
+      - name: Sign Release APK with Custom Key (Optional)
+        if: env.SIGNING_KEY != ''
+        uses: r0adkll/sign-android-release@v1
+        id: sign_app
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS || secrets.RELEASE_KEY_ALIAS || 'release_key' }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD || secrets.RELEASE_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD || secrets.RELEASE_KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "34.0.0"
+
+      - name: Sign Raw APK with Custom Key (Optional)
+        if: env.SIGNING_KEY != ''
+        uses: r0adkll/sign-android-release@v1
+        id: sign_app_raw
+        with:
+          releaseDirectory: app/build/outputs/apk/rawRelease
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS || secrets.RELEASE_KEY_ALIAS || 'release_key' }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD || secrets.RELEASE_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD || secrets.RELEASE_KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "34.0.0"
+
+      - name: Stage Android 10 Final APKs
+        run: |
+          mkdir -p final_apk
+          TAG="${{ inputs.tag_name }}"
+          # Universal release (Android 10+, R8 + ProGuard + shrinkResources)
+          if [ -f "app/build/outputs/apk/release/app-release-signed.apk" ]; then
+            cp app/build/outputs/apk/release/app-release-signed.apk final_apk/VxMusic-v${TAG}-universal.apk
+          else
+            cp app/build/outputs/apk/release/app-release.apk final_apk/VxMusic-v${TAG}-universal.apk
+          fi
+          # Universal uncompressed variant (Android 10+, raw debuggable/unminified)
+          if [ -f "app/build/outputs/apk/rawRelease/app-rawRelease-signed.apk" ]; then
+            cp app/build/outputs/apk/rawRelease/app-rawRelease-signed.apk final_apk/VxMusic-v${TAG}-universal-uncompressed.apk
+          else
+            cp app/build/outputs/apk/rawRelease/app-rawRelease.apk final_apk/VxMusic-v${TAG}-universal-uncompressed.apk
+          fi
+          rm -rf app/build/outputs/apk/release/*
+
+      - name: Build Android 7.0 Legacy APK (compressed)
+        env:
+          LOSSLESS_BACKEND_URL: ${{ secrets.LOSSLESS_BACKEND_URL }}
+          LOSSLESS_API_KEY: ${{ secrets.LOSSLESS_API_KEY }}
+          LYRICS_API_KEY: ${{ secrets.LYRICS_API_KEY }}
+          SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+          RELEASE_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD || secrets.RELEASE_STORE_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ secrets.ALIAS || secrets.RELEASE_KEY_ALIAS || 'release_key' }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD || secrets.RELEASE_KEY_PASSWORD }}
+        run: ./gradlew assembleRelease -PminSdk=24 --stacktrace
+
+      - name: Sign Android 7 Legacy APK with Custom Key (Optional)
+        if: env.SIGNING_KEY != ''
+        uses: r0adkll/sign-android-release@v1
+        id: sign_app_legacy
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS || secrets.RELEASE_KEY_ALIAS || 'release_key' }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD || secrets.RELEASE_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD || secrets.RELEASE_KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "34.0.0"
+
+      - name: Stage Android 7 Final APK
+        run: |
+          TAG="${{ inputs.tag_name }}"
+          if [ -f "app/build/outputs/apk/release/app-release-signed.apk" ]; then
+            cp app/build/outputs/apk/release/app-release-signed.apk final_apk/VxMusic-v${TAG}-android7.apk
+          else
+            cp app/build/outputs/apk/release/app-release.apk final_apk/VxMusic-v${TAG}-android7.apk
+          fi
+          ls -lh final_apk/
+
+      - name: Prepare Release Notes & Compatibility Notice
+        env:
+          TAG: ${{ inputs.tag_name }}
+          NOTES: ${{ inputs.release_notes }}
+        run: |
+          cat << 'EOF' | sed 's/^ *//' > notice.md
+          ### 📦 Download Packages & Compatibility
+
+          | Package | Recommended OS | Description |
+          | :--- | :--- | :--- |
+          | **`VxMusic-v__TAG__-universal.apk`** (~22 MB) | **Android 10+ (Android 10 – 16+)** | **Standard Recommended Release.** R8-optimized with uncompressed page-aligned native libraries for instant memory mapping. |
+          | **`VxMusic-v__TAG__-universal-uncompressed.apk`** (~89 MB) | **Android 10+ (Android 10 – 16+)** | **Raw Release.** Unminified debuggable variant with uncompressed native libraries. |
+          | **`VxMusic-v__TAG__-android7.apk`** (~17 MB) | **Android 7.0 – 9.0 (Legacy)** | **Legacy Android 7.0+ Variant.** Built with compressed native libraries for older package managers. |
+
+          > [!WARNING]
+          > **Notice for Android 7.0 – 9.0 Users (`VxMusic-v__TAG__-android7.apk`):**
+          > - Hardware GPU glassmorphism / live blur requires Android 12+ and is automatically replaced with translucent dark canvas acrylic styling on older devices.
+          > - The media notification uses classic Android media controls rather than Android 13's wavy-progress player.
+          > - For any device running Android 10 or newer, please install the standard **`VxMusic-v__TAG__-universal.apk`** for optimal performance and memory efficiency.
+          EOF
+
+          sed -i "s/__TAG__/${TAG}/g" notice.md
+
+          if echo "$NOTES" | grep -q "android7"; then
+            printf "%s\n" "$NOTES" > release_body.md
+          elif [ -n "$NOTES" ]; then
+            printf "%s\n\n---\n\n" "$NOTES" > release_body.md
+            cat notice.md >> release_body.md
+          else
+            cat notice.md > release_body.md
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag_name }}
+          name: ${{ inputs.release_name }}
+          body_path: release_body.md
+          files: final_apk/*.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

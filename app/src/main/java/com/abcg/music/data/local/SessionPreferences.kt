@@ -1,0 +1,129 @@
+﻿package com.abcg.music.data.local
+
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.booleanPreferencesKey
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+import com.abcg.music.data.network.LastFmAppCredentials
+import javax.inject.Inject
+import javax.inject.Singleton
+
+data class SessionData(
+    val apiKey: String = LastFmAppCredentials.API_KEY,
+    val apiSecret: String = LastFmAppCredentials.API_SECRET,
+    val sessionKey: String = "",
+    val username: String = "",
+    val isLoaded: Boolean = true,
+) {
+    val isAuthenticated: Boolean get() = isLoaded && username.isNotBlank()
+}
+
+@Singleton
+class SessionPreferences @Inject constructor(
+    private val dataStore: DataStore<Preferences>,
+    private val externalScope: CoroutineScope,
+) {
+    private object Keys {
+        val API_KEY = stringPreferencesKey("lw_apikey")
+        val API_SECRET = stringPreferencesKey("lw_apisecret")
+        val SESSION_KEY = stringPreferencesKey("lw_sessionkey")
+        val USERNAME = stringPreferencesKey("lw_username")
+        val GUEST_MODE = booleanPreferencesKey("lw_guest_mode")
+    }
+
+    val session: StateFlow<SessionData> = dataStore.data
+        .recoverPreferences("SessionPreferences")
+        .map { p ->
+            val storedKey = p.readSafely(Keys.API_KEY)
+            val storedSecret = p.readSafely(Keys.API_SECRET)
+            SessionData(
+                apiKey = if (!storedKey.isNullOrBlank()) storedKey else LastFmAppCredentials.API_KEY,
+                apiSecret = if (!storedSecret.isNullOrBlank()) storedSecret else LastFmAppCredentials.API_SECRET,
+                sessionKey = p.readSafely(Keys.SESSION_KEY) ?: "",
+                username = p.readSafely(Keys.USERNAME) ?: "",
+                isLoaded = true,
+            )
+        }.stateIn(
+        scope = externalScope,
+        started = SharingStarted.Eagerly,
+        initialValue = SessionData(
+            apiKey = LastFmAppCredentials.API_KEY,
+            apiSecret = LastFmAppCredentials.API_SECRET,
+            sessionKey = "",
+            username = "",
+            isLoaded = false,
+        )
+    )
+
+    val currentSession: SessionData get() = session.value
+
+    suspend fun saveSession(username: String, sessionKey: String = "", apiKey: String = LastFmAppCredentials.API_KEY, apiSecret: String = LastFmAppCredentials.API_SECRET) {
+        dataStore.edit {
+            it[Keys.USERNAME] = username.trim()
+            it[Keys.SESSION_KEY] = sessionKey.trim()
+            it[Keys.API_KEY] = apiKey.trim()
+            it[Keys.API_SECRET] = apiSecret.trim()
+            it[Keys.GUEST_MODE] = false
+        }
+    }
+
+    suspend fun setApiCredentials(apiKey: String, apiSecret: String) {
+        dataStore.edit {
+            it[Keys.API_KEY] = apiKey
+            it[Keys.API_SECRET] = apiSecret
+        }
+    }
+
+    /** Direct sign-in — no token, no session exchange: the verified
+     *  username is stored straight away as the signed-in identity. */
+    suspend fun setSignedIn(username: String) {
+        dataStore.edit {
+            it[Keys.USERNAME] = username
+            it[Keys.GUEST_MODE] = false
+        }
+    }
+
+    /** Stores a real Last.fm session key (`sk`) obtained via
+     *  auth.getMobileSession — the one signed call that needs a plaintext
+     *  password, kept as a separate opt-in step from normal sign-in (see
+     *  AuthRepository.obtainSessionKey) rather than required for everyone,
+     *  since it's only needed to unlock scrobbling and track.scrobble.delete. */
+    suspend fun setSessionKey(key: String) {
+        dataStore.edit { it[Keys.SESSION_KEY] = key }
+    }
+
+    suspend fun signOut() {
+        dataStore.edit {
+            it.remove(Keys.SESSION_KEY)
+            it.remove(Keys.USERNAME)
+            it[Keys.GUEST_MODE] = false
+            // API key/secret are intentionally kept — matches the web app's
+            // signOut(), which only clears the session, not the developer credentials.
+        }
+    }
+
+    /** Settings' "Log Out" — matches settings.js's logoutApiCredentials():
+     *  clears username + API key/secret. Playlists and cached data are kept. */
+    suspend fun logOutApiCredentials() {
+        dataStore.edit {
+            it.remove(Keys.USERNAME)
+            it.remove(Keys.API_KEY)
+            it.remove(Keys.API_SECRET)
+            it[Keys.GUEST_MODE] = false
+        }
+    }
+
+    /** Settings' "Clear Session" — matches settings.js's clearAllData():
+     *  a full wipe. Since ThemePreferences shares this same DataStore
+     *  instance, this also resets theme/accent settings back to defaults,
+     *  exactly like the original's localStorage.clear(). */
+    suspend fun clearAll() {
+        dataStore.edit { it.clear() }
+    }
+}

@@ -1,41 +1,54 @@
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated build files
+build/
+**/build/
+.gradle/
+
+# Android Studio / IntelliJ IDEA
+.idea/
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local configuration file (contains SDK location, private tokens)
 local.properties
-/app/release/
-crowdin.yml
-# Kotlin 2.0
-.kotlin/
-.idea
-/simpmusic.jks
-/ffmpeg-kit/build/
 
-#dev files
-ign.md
-.docs
+# Log files
+*.log
 
-# Sentry Config File
-sentry.properties
-/composeApp/build/
-/composeApp/cache/
-/composeApp/kcef-bundle/
-/.mcp.json
-/.claude/settings.local.json
+# Keystore files
+*.jks
+*.keystore
+*.p12
+*.pem
 
-/androidApp/build/
-/androidApp/cache/
+# OS & Tooling
+.DS_Store
+Thumbs.db
+.acside/
+.codex/
+.codex*
+*.codex
+*.codex*
+*.pid
 
-# VLC native libraries (downloaded by vlc-setup plugin)
-/vlc-natives/
-/.omc/
+# Credentials & Environment
+Screenshot/release.jks
+keystore_credentials.txt
+.env
+*.env
+.wrangler/
+

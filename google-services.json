@@ -1,0 +1,103 @@
+{
+  "project_info": {
+    "project_number": "97371051620",
+    "firebase_url": "https://vxmusic-abcg-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "vxmusic-abcg",
+    "storage_bucket": "vxmusic-abcg.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97371051620:android:b7e627e7618f239f23b171",
+        "android_client_info": {
+          "package_name": "com.abcg.music"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97371051620-hcn0l3glvgrqrk6q7bf4nerdqblqeigu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abcg.music",
+            "certificate_hash": "a211dd7a31d103212b446525286d17a6b373e722"
+          }
+        },
+        {
+          "client_id": "97371051620-kkpelstm7bhb023r64rv98kahngjh8cq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abcg.music",
+            "certificate_hash": "f67f1ecf4fb6bb89bc855777b9188dc9d6b256bb"
+          }
+        },
+        {
+          "client_id": "97371051620-19feh2cdgm0k990uj3b63pos6d701ihe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk8ijitlsOFgCFskZxwT6hLLEXCmtiEvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97371051620-19feh2cdgm0k990uj3b63pos6d701ihe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9025638787159540~2187284837"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97371051620:android:b7e627e7618f239f23b171",
+        "android_client_info": {
+          "package_name": "com.abcg.music.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97371051620-hcn0l3glvgrqrk6q7bf4nerdqblqeigu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abcg.music.debug",
+            "certificate_hash": "a211dd7a31d103212b446525286d17a6b373e722"
+          }
+        },
+        {
+          "client_id": "97371051620-kkpelstm7bhb023r64rv98kahngjh8cq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abcg.music.debug",
+            "certificate_hash": "f67f1ecf4fb6bb89bc855777b9188dc9d6b256bb"
+          }
+        },
+        {
+          "client_id": "97371051620-19feh2cdgm0k990uj3b63pos6d701ihe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk8ijitlsOFgCFskZxwT6hLLEXCmtiEvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97371051620-19feh2cdgm0k990uj3b63pos6d701ihe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9025638787159540~2187284837"
+    }
+  ],
+  "configuration_version": "1"
+}
