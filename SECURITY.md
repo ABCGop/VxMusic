@@ -14,10 +14,7 @@ Security fixes are provided for the latest stable release of VxMusic.
 If you discover a security vulnerability in VxMusic, please report it privately rather than creating a public issue.
 
 ### How to Report
-* Reach out privately to the maintainers on Telegram:
-  * Channel: https://t.me/clashprojects
-  * Discussion Group: https://t.me/clashdiscussion
-* Alternatively, submit a private security advisory through the GitHub repository.
+ submit a private security advisory through the GitHub repository.
 * Include:
   * Description of the vulnerability
   * Affected versions and components
